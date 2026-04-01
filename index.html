@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موسوعة الزخرفة العالمية</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>👑 الإمبراطور لزخرفة الأسماء 👑</h1>
+        <p class="subtitle">أدخل اسمك، وشاهد مئات الزخارف والخطوط النادرة تتولد فوراً!</p>
+
+        <div class="input-group">
+            <input type="text" id="username" placeholder="اكتب اسمك هنا (عربي أو إنجليزي)..." oninput="generateAllDecorations()">
+        </div>
+
+        <div class="stats" id="stats-text">اكتب شيئاً لتبدأ السحر...</div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="filterType('all')">الكل</button>
+            <button class="tab-btn" onclick="filterType('ar')">عربي</button>
+            <button class="tab-btn" onclick="filterType('en')">إنجليزي</button>
+            <button class="tab-btn" onclick="filterType('sym')">رموز وأسلحة</button>
+        </div>
+
+        <div class="results-grid" id="results">
+            </div>
+    </div>
+
+    <div id="toast" class="toast">تم النسخ التلقائي! 📋✨</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
