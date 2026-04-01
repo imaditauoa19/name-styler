@@ -13,10 +13,24 @@
 <body>
 
     <div class="container">
-        <div style="text-align: center; margin-bottom: 20px;">
-    <p style="color: #ffffff; font-family: 'Cairo', sans-serif; margin-bottom: 5px;">عدد زوار الموقع 🚀</p>
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fimaditauoa19.github.io%2Fname-styler%2F&title=Visits&edge_flat=false" alt="عدد الزوار" style="display: block; margin: 0 auto;"/>
-        </div>
+        <div style="text-align: center; margin-bottom: 20px; font-family: 'Cairo', sans-serif;">
+    <span style="color: #ffffff; font-size: 16px;">عدد الزيارات: </span>
+    <span id="local-visitor-count" style="color: #00ffcc; font-size: 20px; font-weight: bold; text-shadow: 0 0 10px #00ffcc;">1</span>
+</div>
+
+<script>
+    // كود برجي بسيط لزيادة الرقم وحفظه في ذاكرة الهاتف
+    let currentVisits = localStorage.getItem('my_site_visits');
+    
+    if (!currentVisits) {
+        currentVisits = 1;
+    } else {
+        currentVisits = parseInt(currentVisits) + 1;
+    }
+    
+    localStorage.setItem('my_site_visits', currentVisits);
+    document.getElementById('local-visitor-count').innerText = currentVisits;
+</script>
         
         <h1>👑 STERBEN 👑</h1>
         <p class="subtitle">أدخل اسمك، وشاهد مئات الزخارف والخطوط النادرة تتولد فوراً!</p>
