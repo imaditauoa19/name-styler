@@ -1,42 +1,35 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3T18KYVNC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-J3T18KYVNC');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موسوعة الزخرفة العالمية</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <meta name="description" content="أفضل موقع لزخرفة الأسماء العربية والإنجليزية ورموز ببجي وفري فاير مجاناً وبنقرة واحدة.">
-<meta name="keywords" content="زخرفة اسماء, زخرفة عربي, زخرفة انجليزي, اسماء ببجي, رموز زخرفة, زخرفة فري فاير">
-<meta name="author" content="إمبراطور الزخرفة">
+    <meta name="keywords" content="زخرفة اسماء, زخرفة عربي, زخرفة انجليزي, اسماء ببجي, رموز زخرفة, زخرفة فري فاير">
+    <meta name="author" content="إمبراطور الزخرفة">
+
 </head>
 <body>
+  
+  <div style="position: absolute; top: 15px; right: 15px; z-index: 1000;">
+    <button id="theme-toggle" style="background: #1a1a2e; color: #00ffcc; border: 1px solid #00ffcc; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-family: 'Cairo', sans-serif; box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);">🌙 الوضع الليلي</button>
+  </div>
+
 
     <div class="container">
-        
-        <div style="text-align: center; margin-bottom: 20px; font-family: 'Cairo', sans-serif;">
-    <span style="color: #ffffff; font-size: 16px;">عدد الزيارات: </span>
-    <span id="real-count" style="color: #00ffcc; font-size: 20px; font-weight: bold; text-shadow: 0 0 10px #00ffcc;">1</span>
-</div>
 
-<script>
-    // جلب رقم حقيقي من عداد عالمي موث
-    fetch('https://api.visitorbadge.io/api/combined?path=imaditauoa19_namestyler_final_real&label=Visits&countColor=%23263238&style=flat')
-        .then(response => response.text())
-        .then(data => {
-            // استخراج الأرقام فقط من العداد العالمي
-            const match = data.match(/<text[^>]*>([\d,]+)<\/text>/g);
-            if (match && match.length >= 2) {
-                const count = match[1].replace(/<\/?[^>]+(>|$)/g, "");
-                document.getElementById('real-count').innerText = count;
-            }
-        })
-        .catch(error => {
-            // في حال عدم توفر اتصال بالإنترنت
-            document.getElementById('real-count').innerText = "1";
-        });
-</script>
-        
         <h1>👑 STERBEN 👑</h1>
         <p class="subtitle">أدخل اسمك، وشاهد مئات الزخارف والخطوط النادرة تتولد فوراً!</p>
 
@@ -54,11 +47,32 @@
         </div>
 
         <div class="results-grid" id="results">
-            </div>
+        </div>
     </div>
 
     <div id="toast" class="toast">تم النسخ التلقائي! 📋✨</div>
 
     <script src="script.js"></script>
+    
+    <script>
+    const btn = document.getElementById('theme-toggle');
+    btn.addEventListener('click', function() {
+        const body = document.body;
+        if (body.style.background === 'white') {
+            body.style.background = '#0d0d1a'; 
+            body.style.color = 'white';
+            btn.innerText = '🌙 الوضع الليلي';
+            btn.style.background = '#1a1a2e';
+            btn.style.color = '#00ffcc';
+        } else {
+            body.style.background = 'white';
+            body.style.color = 'black';
+            btn.innerText = '☀️ الوضع النهاري';
+            btn.style.background = '#f0f0f0';
+            btn.style.color = '#1a1a2e';
+        }
+    });
+</script>
+
 </body>
 </html>
