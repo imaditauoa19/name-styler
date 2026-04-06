@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J3T18KYVNC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PBGGFHNQWQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-      gtag('config', 'G-J3T18KYVNC');
-    </script>
-
+  gtag('config', 'G-PBGGFHNQWQ');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موسوعة الزخرفة العالمية</title>
@@ -19,17 +18,78 @@
     <meta name="description" content="أفضل موقع لزخرفة الأسماء العربية والإنجليزية ورموز ببجي وفري فاير مجاناً وبنقرة واحدة.">
     <meta name="keywords" content="زخرفة اسماء, زخرفة عربي, زخرفة انجليزي, اسماء ببجي, رموز زخرفة, زخرفة فري فاير">
     <meta name="author" content="إمبراطور الزخرفة">
-
 </head>
 <body>
   
-  <div style="position: absolute; top: 15px; right: 15px; z-index: 1000;">
-    <button id="theme-toggle" style="background: #1a1a2e; color: #00ffcc; border: 1px solid #00ffcc; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-family: 'Cairo', sans-serif; box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);">🌙 الوضع الليلي</button>
-  </div>
+    <div class="hamburger-menu" id="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
+    <div class="side-nav" id="side-nav">
+        <div class="close-btn" id="close-btn">&times;</div>
+        <div class="nav-content">
+            <button id="open-firefire-modal" style="width: 100%; background: linear-gradient(45deg, #ff0055, #7a00ff); color: white; border: none; padding: 15px; border-radius: 10px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4); margin-bottom: 10px;">🔥 زخرفة Bio وأكواد فري فاير</button>
+            
+            <button id="open-clan-modal" style="width: 100%; background: linear-gradient(45deg, #00ffcc, #0077ff); color: white; border: none; padding: 15px; border-radius: 10px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 255, 204, 0.3);">🛡️ أفكار أسماء كلانات</button>
+        <div class="nav-checker-section">
+    <label for="nav-check-input">📏 فاحص طول الاسم (الحد الأقصى 12)</label>
+    <div class="nav-checker-box">
+        <input type="text" id="nav-check-input" placeholder="ألصق الاسم المزخرف هنا..." oninput="checkNavNameLength()">
+        <div id="nav-checker-result" class="nav-checker-result">اكتب شيئاً للبدء...</div>
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+
+    <div style="position: fixed; top: 15px; left: 20px; z-index: 1000;">
+        <button id="theme-toggle" style="background: #1a1a2e; color: #00ffcc; border: 1px solid #00ffcc; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-family: 'Tajawal', sans-serif; box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);">🌙 الوضع الليلي</button>
+    </div>
+
+    <div class="ff-fullscreen-page" id="ff-fullscreen-page">
+        <div class="page-header">
+            <button class="back-btn" id="page-close-btn">⬅ رجوع للموقع</button>
+            <h2>🎒 مخزن أسرار فري فاير</h2>
+        </div>
+        
+        <div class="page-body">
+            <h4 class="section-title" style="color: #ffaa00;">🎗️ شارات الفاير باس (Fire Pass)</h4>
+            <p class="section-desc">انسخ الكود وضعه قبل اسمك في البيو ليظهر شعار الموسم!</p>
+            <div class="code-grid" id="firepass-container"></div>
+
+            <h4 class="section-title" style="color: #00ffcc;">🎨 أكواد ألوان الـ Bio</h4>
+            <div class="code-grid" id="colors-container"></div>
+            
+            <h4 class="section-title" style="color: #ff0055;">💎 رموز نادرة ومفقودة (عدد لا يحصى)</h4>
+            <div class="symbols-grid" id="symbols-container"></div>
+        </div>
+    </div>
+
+    <div class="ff-fullscreen-page" id="clan-fullscreen-page">
+        <div class="page-header" style="border-bottom-color: #00ffcc;">
+            <button class="back-btn" id="clan-close-btn" style="background: #0055ff; box-shadow: 0 0 10px rgba(0, 85, 255, 0.4);">⬅ رجوع للموقع</button>
+            <h2>🛡️ مولد أسماء الكلانات الفخمة</h2>
+        </div>
+        
+        <div class="page-body" style="text-align: center;">
+            <p class="section-desc">اضغط على الزر لتوليد اسم كلان مرعب عشوائي وجاهز!</p>
+            
+            <div id="clan-output" style="background: #16162a; padding: 20px; font-size: 24px; color: #00ffcc; font-weight: bold; border-radius: 10px; border: 2px dashed #00ffcc; margin: 20px auto; max-width: 400px; min-height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                اضغط لتوليد الاسم...
+            </div>
+            
+            <button id="generate-clan-btn" style="background: linear-gradient(45deg, #ff0055, #7a00ff); color: white; border: none; padding: 12px 30px; border-radius: 8px; font-family: 'Tajawal', sans-serif; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4);">⚔️ توليد اسم جديد</button>
+            <div class="ff-big-logo">FREE FIRE</div>
+            
+        </div>
+    </div>
+    
 
     <div class="container">
-
         <h1>👑 STERBEN 👑</h1>
         <p class="subtitle">أدخل اسمك، وشاهد مئات الزخارف والخطوط النادرة تتولد فوراً!</p>
 
@@ -46,8 +106,7 @@
             <button class="tab-btn" onclick="filterType('sym')">رموز وأسلحة</button>
         </div>
 
-        <div class="results-grid" id="results">
-        </div>
+        <div class="results-grid" id="results"></div>
     </div>
 
     <div id="toast" class="toast">تم النسخ التلقائي! 📋✨</div>
@@ -55,24 +114,23 @@
     <script src="script.js"></script>
     
     <script>
-    const btn = document.getElementById('theme-toggle');
-    btn.addEventListener('click', function() {
-        const body = document.body;
-        if (body.style.background === 'white') {
-            body.style.background = '#0d0d1a'; 
-            body.style.color = 'white';
-            btn.innerText = '🌙 الوضع الليلي';
-            btn.style.background = '#1a1a2e';
-            btn.style.color = '#00ffcc';
-        } else {
-            body.style.background = 'white';
-            body.style.color = 'black';
-            btn.innerText = '☀️ الوضع النهاري';
-            btn.style.background = '#f0f0f0';
-            btn.style.color = '#1a1a2e';
-        }
-    });
-</script>
-
+        const btn = document.getElementById('theme-toggle');
+        btn.addEventListener('click', function() {
+            const body = document.body;
+            if (body.style.background === 'white') {
+                body.style.background = '#0d0d1a'; 
+                body.style.color = 'white';
+                btn.innerText = '🌙 الوضع الليلي';
+                btn.style.background = '#1a1a2e';
+                btn.style.color = '#00ffcc';
+            } else {
+                body.style.background = 'white';
+                body.style.color = 'black';
+                btn.innerText = '☀️ الوضع النهاري';
+                btn.style.background = '#f0f0f0';
+                btn.style.color = '#1a1a2e';
+            }
+        });
+    </script>
 </body>
 </html>
