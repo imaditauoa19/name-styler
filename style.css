@@ -86,7 +86,7 @@ h1 {
 .tab-btn {
     background: rgba(255, 255, 255, 0.05);
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(5, 255, 255, 0.2);
     padding: 12px 24px;
     border-radius: 50px;
     cursor: pointer;
@@ -126,10 +126,10 @@ h1 {
 }
 
 .result-item:hover {
-    background: rgba(0, 255, 255, 0.1);
-    border-color: #00ffff;
+    background: rgba(0, 255, 204, 0.1);
+    border-color: #00ffcc;
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 255, 204, 0.2);
 }
 
 .toast {
@@ -145,6 +145,7 @@ h1 {
     transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     opacity: 0;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    z-index: 999999; /* رقم ضخم لكي تظهر التوست فوق كل شيء */
 }
 
 .toast.show {
@@ -154,3 +155,275 @@ h1 {
 
 .results-grid::-webkit-scrollbar { width: 8px; }
 .results-grid::-webkit-scrollbar-thumb { background: #00ffff; border-radius: 10px; }
+
+/* تنسيق زر الهامبرغر */
+.hamburger-menu {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    width: 100%;
+    height: 3px;
+    background-color: #00ffcc;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 255, 204, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* النافذة الجانبية */
+.side-nav {
+    position: fixed;
+    top: 0;
+    right: -250px; /* مخفية خارج الشاشة على اليمين */
+    width: 250px;
+    height: 100%;
+    background: #1a1a2e;
+    border-left: 1px solid #00ffcc;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 1002;
+    transition: all 0.3s ease;
+    padding: 20px;
+}
+
+.side-nav.open {
+    right: 0; /* تظهر عند الضغط */
+}
+
+/* زر الإغلاق داخل النافذة */
+.close-btn {
+    font-size: 30px;
+    color: #ff0055;
+    cursor: pointer;
+    text-align: left;
+}
+
+.nav-content {
+    margin-top: 30px;
+}
+
+/* طبقة التظليل */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+.overlay.active {
+    display: block;
+}
+
+/* الصفحة الكاملة التي تغطي الموقع (Bio والكلانات) */
+.ff-fullscreen-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0d0d1a;
+    z-index: 99999;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.ff-fullscreen-page.active {
+    display: flex;
+}
+
+/* رأس الصفحة وزر الرجوع */
+.page-header {
+    background: #1a1a2e;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #ff0055;
+}
+
+.page-header h2 {
+    color: #fff;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 18px;
+    margin: 0;
+}
+
+.back-btn {
+    background: #ff0055;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: 'Tajawal', sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.4);
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+}
+
+/* جسم الصفحة وسكرول التصفح */
+.page-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.page-body::-webkit-scrollbar { width: 6px; }
+.page-body::-webkit-scrollbar-thumb { background: #ff0055; border-radius: 10px; }
+
+.section-title {
+    font-family: 'Tajawal', sans-serif;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.section-desc {
+    color: #a0a0c0;
+    font-size: 13px;
+    margin-bottom: 15px;
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* شبكة الأكواد (الفايرباس والألوان) */
+.code-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.ff-code-box {
+    background: #16162a;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.ff-code-box:hover {
+    border-color: #00ffcc;
+    background: rgba(0, 255, 204, 0.05);
+    transform: translateY(-3px);
+}
+
+/* شبكة الرموز الكثيرة */
+.symbols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 10px;
+}
+
+.ff-symbol-item {
+    background: #1a1a2e;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ff0055;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+.ff-symbol-item:hover {
+    background: rgba(255, 0, 85, 0.1);
+    transform: scale(1.1);
+    border-color: #00ffcc;
+}
+/* تنسيق شعار فري فاير الكبير في أسفل الصفحة */
+.ff-big-logo {
+    font-size: 70px; /* حجم الخط ضخم */
+    font-weight: 900; /* خط عريض جداً */
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-family: 'Tajawal', sans-serif; /* أو أي خط تفضله */
+    letter-spacing: 5px; /* مسافة بين الحروف لتعطي فخامة */
+    
+    /* تأثير ألوان اللعبة (النار المشتعلة) */
+    background: linear-gradient(to bottom, #fffb00 0%, #ff5100 50%, #990000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    /* ظل خلف الكلمة لتعطي عمق */
+    filter: drop-shadow(0px 5px 10px rgba(255, 81, 0, 0.5));
+    
+    /* حظر تحديد النص لكي تبدو كأنها صورة حقيقية */
+    user-select: none;
+    opacity: 0.8; /* جعلها شفافة قليلاً لكي لا تطغى على الموقع */
+}
+
+/* تعديل ليناسب شاشات الهواتف الصغيرة */
+@media (max-width: 600px) {
+    .ff-big-logo {
+        font-size: 45px;
+        margin-top: 30px;
+    }
+}
+/* تنسيق فاحص الأسماء داخل قائمة الهامبرغر */
+.nav-checker-section {
+    margin: 20px 15px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #ffaa00;
+    border-radius: 8px;
+}
+
+.nav-checker-section label {
+    display: block;
+    color: #ffaa00;
+    font-size: 13px;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-checker-box input {
+    width: 100%;
+    padding: 8px;
+    background: #0d0d1a;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.nav-checker-box input:focus {
+    border-color: #00ffff;
+}
+
+.nav-checker-result {
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #a0a0c0;
+    text-align: center;
+}
+
+/* ألوان النتيجة */
+.status-good { color: #00ff00; } /* أخضر للمقبول */
+.status-bad { color: #ff0055; }  /* أحمر للمرفوض */
