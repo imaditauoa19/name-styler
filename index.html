@@ -60,6 +60,11 @@
             <h4 class="section-title" style="color: #ffaa00;">🎗️ شارات الفاير باس (Fire Pass)</h4>
             <p class="section-desc">انسخ الكود وضعه قبل اسمك في البيو ليظهر شعار الموسم!</p>
             <div class="code-grid" id="firepass-container"></div>
+<div style="background-color: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid #FFD700; color: #fff; text-align: right; direction: rtl; margin-bottom: 15px;">
+    <h4 style="color: #FFD700; margin-top: 0;">💡 نصائح المحترفين للبيو:</h4>
+    <p style="margin: 5px 0;">• لجعل الخط عريضاً وسميكاً: ضع الكود <strong>[b]</strong> قبل اللون.</p>
+    <p style="margin: 5px 0;">• لجعل الكلام في منتصف البيو: ضع الكود <strong>[c]</strong> قبل اللون.</p>
+</div>
 
             <h4 class="section-title" style="color: #00ffcc;">🎨 أكواد ألوان الـ Bio</h4>
             <div class="code-grid" id="colors-container"></div>
@@ -103,7 +108,6 @@
             <button class="tab-btn active" onclick="filterType('all')">الكل</button>
             <button class="tab-btn" onclick="filterType('ar')">عربي</button>
             <button class="tab-btn" onclick="filterType('en')">إنجليزي</button>
-            <button class="tab-btn" onclick="filterType('sym')">رموز وأسلحة</button>
         </div>
 
         <div class="results-grid" id="results"></div>
@@ -132,5 +136,37 @@
             }
         });
     </script>
+<footer class="main-footer">
+    <p>© 2026 جميع الحقوق محفوظة لموقع زخرفة فري فاير</p>
+    <div class="footer-links">
+        <a href="#privacy">سياسة الخصوصية</a> | 
+        <a href="#contact">اتصل بنا</a>
+    </div>
+</footer>
+
+<div id="privacy" style="display:none; background: #1a1a1a; color: #eee; padding: 25px; margin: 20px; border-radius: 12px; border: 1px solid #FFD700; direction: rtl; line-height: 1.6;">
+    <h3 style="color: #FFD700; border-bottom: 1px solid #444; padding-bottom: 10px;">سياسة الخصوصية (Privacy Policy)</h3>
+    <p>خصوصيتك تهمنا. توضح هذه السياسة كيفية تعاملنا مع المعلومات:</p>
+    <ul style="padding-right: 20px;">
+        <li><strong>ملفات تعريف الارتباط:</strong> نستخدم ملفات الـ Cookies لتحسين تجربتك وتذكر تفضيلاتك عند نسخ الأكواد.</li>
+        <li><strong>إعلانات الطرف الثالث:</strong> نستخدم شركات إعلانية (مثل Google AdSense) لعرض الإعلانات. تستخدم هذه الشركات ملف تعريف الارتباط DART لخدمة الإعلانات بناءً على زياراتك لموقعنا والمواقع الأخرى.</li>
+        <li><strong>Google Analytics:</strong> نستخدم هذه الأداة لفهم عدد الزوار وتوزيعهم الجغرافي لتحسين محتوى الموقع.</li>
+    </ul>
+    <p>باستخدامك لموقعنا، فإنك توافق على سياسة الخصوصية الخاصة بنا.</p>
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="document.getElementById('privacy').style.display='none'" style="background:#FFD700; color:#000; border:none; padding:8px 25px; border-radius: 5px; font-weight: bold; cursor:pointer;">فهمت ذلك</button>
+    </div>
+</div>
+
+<div id="contact" style="display:none; background: #1a1a1a; color: #eee; padding: 25px; margin: 20px; border-radius: 12px; border: 1px solid #FFD700; direction: rtl; text-align: center;">
+    <h3 style="color: #FFD700;">تواصل معنا</h3>
+    <p>هل لديك استفسار أو واجهت مشكلة في نسخ الأكواد؟</p>
+    <div style="background: #222; padding: 15px; border-radius: 8px; margin: 15px 0;">
+        <p style="margin: 0;">البريد الإلكتروني الرسمي:</p>
+        <strong style="color: #FFD700; font-size: 1.1em;">imadmimi203@gmail.com</strong>
+    </div>
+    <button onclick="document.getElementById('contact').style.display='none'" style="background:#FF9933; color:#000; border:none; padding:8px 25px; border-radius: 5px; font-weight: bold; cursor:pointer;">إغلاق</button>
+</div>
+
 </body>
 </html>
