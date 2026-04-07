@@ -427,3 +427,40 @@ h1 {
 /* ألوان النتيجة */
 .status-good { color: #00ff00; } /* أخضر للمقبول */
 .status-bad { color: #ff0055; }  /* أحمر للمرفوض */
+/* تنسيق الفوتر ليكون في الأسفل تماماً */
+.main-footer {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px; /* مسافة بينه وبين محتوى الموقع */
+    border-top: 2px solid #FFD700;
+    direction: rtl;
+    display: block;
+    clear: both; /* يمنع الالتصاق بالعناصر التي قبله */
+}
+
+.footer-links a {
+    color: #FFD700;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #fff; /* يتغير اللون عند تمرير الماوس */
+}
+
+/* لضمان بقائه في أسفل الشاشة حتى لو كانت الصفحة قصيرة */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.main-footer {
+    margin-top: auto; /* يدفع الفوتر للأسفل تلقائياً */
+}
