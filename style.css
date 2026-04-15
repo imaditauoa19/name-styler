@@ -1,3 +1,6 @@
+/* ==========================================
+   1. الإعدادات الأساسية والخلفية (Globals & Background)
+   ========================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -6,15 +9,18 @@
 }
 
 body {
+    /* تم دمج كود الـ body المكرر هنا */
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
     color: #fff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
 }
 
 @keyframes gradientBG {
@@ -23,6 +29,9 @@ body {
     100% { background-position: 0% 50%; }
 }
 
+/* ==========================================
+   2. الحاوية الرئيسية والنصوص (Main Layout & Typography)
+   ========================================== */
 .container {
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(15px);
@@ -49,6 +58,9 @@ h1 {
     font-size: 1.1rem;
 }
 
+/* ==========================================
+   3. حقول الإدخال والأزرار (Inputs & Buttons)
+   ========================================== */
 .input-group input {
     width: 100%;
     padding: 18px 25px;
@@ -100,6 +112,28 @@ h1 {
     box-shadow: 0 0 15px rgba(255, 0, 127, 0.6);
 }
 
+.ff-btn {
+    width: 100%;
+    padding: 15px;
+    background: #1a1a2e;
+    color: #e94560;
+    border: 2px solid #e94560;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.ff-btn:hover {
+    background: #e94560;
+    color: #fff;
+}
+
+/* ==========================================
+   4. عرض النتائج والتوست (Results Grid & Toast)
+   ========================================== */
 .results-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -111,6 +145,9 @@ h1 {
     background: rgba(0, 0, 0, 0.2);
     border-radius: 15px;
 }
+
+.results-grid::-webkit-scrollbar { width: 8px; }
+.results-grid::-webkit-scrollbar-thumb { background: #00ffff; border-radius: 10px; }
 
 .result-item {
     background: rgba(255, 255, 255, 0.05);
@@ -145,7 +182,7 @@ h1 {
     transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     opacity: 0;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    z-index: 999999; /* رقم ضخم لكي تظهر التوست فوق كل شيء */
+    z-index: 999999;
 }
 
 .toast.show {
@@ -153,10 +190,9 @@ h1 {
     opacity: 1;
 }
 
-.results-grid::-webkit-scrollbar { width: 8px; }
-.results-grid::-webkit-scrollbar-thumb { background: #00ffff; border-radius: 10px; }
-
-/* تنسيق زر الهامبرغر */
+/* ==========================================
+   5. القائمة الجانبية (Sidebar & Hamburger)
+   ========================================== */
 .hamburger-menu {
     position: fixed;
     top: 20px;
@@ -179,11 +215,10 @@ h1 {
     transition: all 0.3s ease;
 }
 
-/* النافذة الجانبية */
 .side-nav {
     position: fixed;
     top: 0;
-    right: -250px; /* مخفية خارج الشاشة على اليمين */
+    right: -250px;
     width: 250px;
     height: 100%;
     background: #1a1a2e;
@@ -195,10 +230,9 @@ h1 {
 }
 
 .side-nav.open {
-    right: 0; /* تظهر عند الضغط */
+    right: 0;
 }
 
-/* زر الإغلاق داخل النافذة */
 .close-btn {
     font-size: 30px;
     color: #ff0055;
@@ -210,180 +244,35 @@ h1 {
     margin-top: 30px;
 }
 
-/* طبقة التظليل */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: none;
-    z-index: 1000;
-}
-
-.overlay.active {
+.menu-btn {
+    width: 90%;
+    margin: 10px auto;
     display: block;
-}
-
-/* الصفحة الكاملة التي تغطي الموقع (Bio والكلانات) */
-.ff-fullscreen-page {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #0d0d1a;
-    z-index: 99999;
-    display: none;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.ff-fullscreen-page.active {
-    display: flex;
-}
-
-/* رأس الصفحة وزر الرجوع */
-.page-header {
-    background: #1a1a2e;
+    background-color: #1a1a2e;
+    color: #e94560;
+    border: 2px solid #e94560;
     padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 2px solid #ff0055;
-}
-
-.page-header h2 {
-    color: #fff;
-    font-family: 'Tajawal', sans-serif;
+    border-radius: 10px;
     font-size: 18px;
-    margin: 0;
-}
-
-.back-btn {
-    background: #ff0055;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-family: 'Tajawal', sans-serif;
-    cursor: pointer;
     font-weight: bold;
-    box-shadow: 0 0 10px rgba(255, 0, 85, 0.4);
-    transition: 0.2s;
-}
-
-.back-btn:hover {
-    transform: scale(1.05);
-}
-
-/* جسم الصفحة وسكرول التصفح */
-.page-body {
-    padding: 20px;
-    overflow-y: auto;
-    flex: 1;
-}
-
-.page-body::-webkit-scrollbar { width: 6px; }
-.page-body::-webkit-scrollbar-thumb { background: #ff0055; border-radius: 10px; }
-
-.section-title {
-    font-family: 'Tajawal', sans-serif;
-    margin-top: 25px;
-    margin-bottom: 5px;
-}
-
-.section-desc {
-    color: #a0a0c0;
-    font-size: 13px;
-    margin-bottom: 15px;
-    font-family: 'Tajawal', sans-serif;
-}
-
-/* شبكة الأكواد (الفايرباس والألوان) */
-.code-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
-}
-
-.ff-code-box {
-    background: #16162a;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
     cursor: pointer;
     text-align: center;
-    color: #fff;
-    font-family: 'Tajawal', sans-serif;
-    font-size: 14px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
-.ff-code-box:hover {
-    border-color: #00ffcc;
-    background: rgba(0, 255, 204, 0.05);
-    transform: translateY(-3px);
+.acc-panel {
+    width: 90%;
+    margin: 0 auto;
+    background: #16213e;
+    border-radius: 0 0 10px 10px;
+    padding: 10px;
 }
 
-/* شبكة الرموز الكثيرة */
-.symbols-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-    gap: 10px;
-}
-
-.ff-symbol-item {
-    background: #1a1a2e;
-    text-align: center;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ff0055;
-    cursor: pointer;
-    color: #fff;
-    font-size: 20px;
-    transition: 0.2s;
-}
-
-.ff-symbol-item:hover {
-    background: rgba(255, 0, 85, 0.1);
-    transform: scale(1.1);
-    border-color: #00ffcc;
-}
-/* تنسيق شعار فري فاير الكبير في أسفل الصفحة */
-.ff-big-logo {
-    font-size: 70px; /* حجم الخط ضخم */
-    font-weight: 900; /* خط عريض جداً */
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    font-family: 'Tajawal', sans-serif; /* أو أي خط تفضله */
-    letter-spacing: 5px; /* مسافة بين الحروف لتعطي فخامة */
-    
-    /* تأثير ألوان اللعبة (النار المشتعلة) */
-    background: linear-gradient(to bottom, #fffb00 0%, #ff5100 50%, #990000 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    
-    /* ظل خلف الكلمة لتعطي عمق */
-    filter: drop-shadow(0px 5px 10px rgba(255, 81, 0, 0.5));
-    
-    /* حظر تحديد النص لكي تبدو كأنها صورة حقيقية */
-    user-select: none;
-    opacity: 0.8; /* جعلها شفافة قليلاً لكي لا تطغى على الموقع */
-}
-
-/* تعديل ليناسب شاشات الهواتف الصغيرة */
-@media (max-width: 600px) {
-    .ff-big-logo {
-        font-size: 45px;
-        margin-top: 30px;
-    }
-}
-/* تنسيق فاحص الأسماء داخل قائمة الهامبرغر */
+/* ==========================================
+   6. فاحص الأسماء (Name Checker)
+   ========================================== */
 .nav-checker-section {
-    margin: 20px 15px;
+    margin: 20px 1px;
     padding: 12px;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid #ffaa00;
@@ -424,21 +313,185 @@ h1 {
     text-align: center;
 }
 
-/* ألوان النتيجة */
-.status-good { color: #00ff00; } /* أخضر للمقبول */
-.status-bad { color: #ff0055; }  /* أحمر للمرفوض */
-/* تنسيق الفوتر ليكون في الأسفل تماماً */
+.status-good { color: #00ff00; }
+.status-bad { color: #ff0055; }
+
+/* ==========================================
+   7. النوافذ المنبثقة والصفحات الكاملة (Modals & Fullscreen Pages)
+   ========================================== */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1000;
+}
+
+.overlay.active {
+    display: block;
+}
+
+.ff-fullscreen-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0d0d1a;
+    z-index: 99999;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.ff-fullscreen-page.active {
+    display: flex;
+}
+
+.page-header {
+    background: #1a1a2e;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #ff0055;
+}
+
+.page-header h2 {
+    color: #fff;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 18px;
+    margin: 0;
+}
+
+.back-btn {
+    background: #ff0055;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: 'Tajawal', sans-serif;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(255, 0, 85, 0.4);
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    transform: scale(1.05);
+}
+
+.page-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.page-body::-webkit-scrollbar { width: 6px; }
+.page-body::-webkit-scrollbar-thumb { background: #ff0055; border-radius: 10px; }
+
+.section-title {
+    font-family: 'Tajawal', sans-serif;
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.section-desc {
+    color: #a0a0c0;
+    font-size: 13px;
+    margin-bottom: 15px;
+    font-family: 'Tajawal', sans-serif;
+}
+
+/* ==========================================
+   8. شبكات الأكواد والرموز (Codes & Symbols Grids)
+   ========================================== */
+.code-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.ff-code-box {
+    background: #16162a;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.ff-code-box:hover {
+    border-color: #00ffcc;
+    background: rgba(0, 255, 204, 0.05);
+    transform: translateY(-3px);
+}
+
+.symbols-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 10px;
+}
+
+.ff-symbol-item {
+    background: #1a1a2e;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ff0055;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+.ff-symbol-item:hover {
+    background: rgba(255, 0, 85, 0.1);
+    transform: scale(1.1);
+    border-color: #00ffcc;
+}
+
+/* ==========================================
+   9. شعار فري فاير (Fire Fire Big Logo)
+   ========================================== */
+.ff-big-logo {
+    font-size: 70px;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-family: 'Tajawal', sans-serif;
+    letter-spacing: 5px;
+    background: linear-gradient(to bottom, #fffb00 0%, #ff5100 50%, #990000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 5px 10px rgba(255, 81, 0, 0.5));
+    user-select: none;
+    opacity: 0.8;
+}
+
+/* ==========================================
+   10. الفوتر والتذييل (Footer)
+   ========================================== */
 .main-footer {
+    /* تم دمج كود الفوتر المكرر لضمان بقائه في الأسفل */
     width: 100%;
     background-color: #1a1a1a;
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
-    margin-top: 40px; /* مسافة بينه وبين محتوى الموقع */
+    margin-top: auto;
     border-top: 2px solid #FFD700;
     direction: rtl;
     display: block;
-    clear: both; /* يمنع الالتصاق بالعناصر التي قبله */
+    clear: both;
 }
 
 .footer-links a {
@@ -450,17 +503,57 @@ h1 {
 }
 
 .footer-links a:hover {
-    color: #fff; /* يتغير اللون عند تمرير الماوس */
+    color: #fff;
 }
 
-/* لضمان بقائه في أسفل الشاشة حتى لو كانت الصفحة قصيرة */
-body {
+/* ==========================================
+   11. التجاوب مع شاشات الهواتف (Responsive Media Queries)
+   ========================================== */
+@media (max-width: 600px) {
+    .ff-big-logo {
+        font-size: 45px;
+        margin-top: 30px;
+    }
+}
+/* الزر الفخم لصانع اللوجو */
+.logo-btn {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #00ffcc, #0077ff); /* تدرج لوني ناري فخم */
+    color: #ffffff !important;
+    text-decoration: none;
+    margin-top: 10px;    /* مسافة من الأعلى */
+    margin-bottom: 15px; /* مسافة من الأسفل */
+    margin-left: auto;   /* اجعلها 0 إذا أردت الزر جهة اليس*/
+    margin-right: auto;  /* اجعلها 0 إذا أردت الزر جهة اليمي*/
+    padding: 13px 25px; /* نفس حجم أزرارك الحالية تقريباً */
+    border-radius: 12px; /* حواف دائرية تطابق تصميمك */
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(221, 36, 118, 0.4); /* توهج خفيف أسفل الزر */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.main-footer {
-    margin-top: auto; /* يدفع الفوتر للأسفل تلقائياً */
+/* شارة "جديد" داخل الزر */
+.badge-fire {
+    background: #ff0077;
+    color: #ffff;
+    font-size: 5px;
+    padding: 3px 8px;
+    border-radius: 8px;
+    margin-right: 10px; /* مسافة بين الكلمة والشارة */
+    font-weight: 900;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    animation: heartbeat 1.5s infinite; /* نبض خفيف لجذب العين */
 }
+
+/* حركة النبض لشارة جديد */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
