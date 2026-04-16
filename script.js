@@ -137,6 +137,13 @@ function copyText(text, name = "") {
     navigator.clipboard.writeText(text).then(() => {
         showToast(`تم نسخ ${name || text} بنجاح ✅`);
     });
+    // تحقق إذا كان الإعلان قد ظهر بالفعل في هذه الجلسة
+if (!sessionStorage.getItem('ad_shown')) {
+    window.open('https://www.profitablecpmratenetwork.com/vkgeujwk3e?key=7d47e4ced708ab6242b8a59698395aa2', '_blank');
+    // تخزين الحالة لكي لا يفتح مرة أخرى إلا بعد التحديث أو إعادة الدخول
+    sessionStorage.setItem('ad_shown', 'true');
+  }
+
 }
 
 function showToast(message) {
