@@ -38,7 +38,13 @@
 <meta name="twitter:title" content="زخرفة اسماء متنوعة">
 </head>
 
-
+<body>
+<div id="loader">
+    <div class="loader-content">
+        <div class="loader-spinner"></div>
+        <p>جاري التحميل...</p>
+    </div>
+</div>
     <div class="hamburger-menu" id="hamburger-btn">
         <span></span>
         <span></span>
@@ -187,10 +193,10 @@
             btn.innerText = '🌙 الوضع الليلي';
         }
     });
+</script>
     <button id="install-btn" style="display:none; width: 100%; background: linear-gradient(45deg, #00ffcc, #0077ff); color: #000; border: none; padding: 15px; border-radius: 10px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer; margin-top: 10px;">
     📲 تثبيت التطبيق
 </button>
-</script>
     <div class="ad-sticky-footer">
     <script type="text/javascript">
       atOptions = {
@@ -220,5 +226,15 @@
     box-shadow: 0 4px 15px rgba(0,255,204,0.4);
     transition: all 0.3s ease;
    ">▲</button>
+  <script>
+    window.addEventListener('load', () => {
+        const loader = document.getElementById('loader');
+        if(loader) {
+            loader.classList.add('hidden');
+            setTimeout(() => loader.remove(), 500);
+        }
+    });
+  </script>
 </body>
 </html>
+
