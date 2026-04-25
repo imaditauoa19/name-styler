@@ -2,7 +2,7 @@
     "name": "زخرفة اسماء متنوعة",
     "short_name": "زخرفة",
     "description": "أفضل موقع لزخرفة الأسماء العربية والإنجليزية",
-    "start_url": "/",
+    "start_url": "/name-styler/",
     "display": "standalone",
     "background_color": "#0d0d1a",
     "theme_color": "#00ffcc",
@@ -11,8 +11,8 @@
     "icons": [
         {
             "src": "favicon.png",
-            "sizes": "any",
-            "type": "image/png+xml",
+            "sizes": "512x512",
+            "type": "image/png",
             "purpose": "any maskable"
         }
     ]
