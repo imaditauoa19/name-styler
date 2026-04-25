@@ -2,16 +2,8 @@
 <html lang="ar" dir="rtl">
 
 <head>
-  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/6598/6598515.png">
-
-<meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/6598/6598515.png">
-<meta property="og:image:width" content="512">
-<meta property="og:image:height" content="512">
-<meta property="og:type" content="website">
-
-<meta name="thumbnail" content="https://cdn-icons-png.flaticon.com/512/6598/6598515.png">
-
-  <meta name="monetag" content="6e9ab6613b34476f321825a3bcf38abc">
+  
+  <meta name="monetag" content="dba7f226e2ebd6e6134199e8f6c3fedf">
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PBGGFHNQWQ"></script>
     <script>
@@ -29,9 +21,23 @@
     <meta name="description" content="أفضل موقع لزخرفة الأسماء العربية والإنجليزية ورموز ببجي وفري فاير مجاناً وبنقرة واحدة.">
     <meta name="keywords" content="زخرفة اسماء فري فاير مع مساحه, زخرفة عربي, زخرفة انجليزي, اسماء ببجي, رموز زخرفة, زخرفة فري فاير">
     <meta name="author" content="إمبراطور الزخرفة">
+    <link rel="icon" type="image/svg+xml" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="زخرفة">
+<meta name="theme-color" content="#00ffcc">
+    <meta property="og:image" content="https://imaditauoa19.github.io/name-styler/og-image.png">
+    <!-- Open Graph للمشاركة -->
+<meta property="og:title" content="زخرفة اسماء متنوعة">
+<meta property="og:description" content="أفضل موقع لزخرفة الأسماء العربية والإنجليزية">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="زخرفة اسماء متنوعة">
 </head>
 
-<body>
 
     <div class="hamburger-menu" id="hamburger-btn">
         <span></span>
@@ -44,11 +50,6 @@
         <div class="nav-content">
             <button id="open-firefire-modal" style="width: 100%; background: linear-gradient(45deg, #00ffcc, #0077ff); color: white; border: none; padding: 15px; border-radius: 10px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4); margin-bottom: 10px;">🔥 زخرفة Bio وأكواد فري فاير</button>
             <button id="open-clan-modal" style="width: 100%; background: linear-gradient(45deg, #00ffcc, #0077ff); color: white; border: none; padding: 15px; border-radius: 10px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 255, 204, 0.3);">🛡️ أفكار أسماء كلانات</button>
-            <a href="https://imaditauoa19.github.io/Logo_Maker/" class="premium-btn logo-btn">
-              🎨صانع اللوجو 
-              <span class="badge-fire">جديد</span>
-              </a>
-
             <div class="nav-checker-section">
                 <label for="nav-check-input">📏 فاحص طول الاسم (الحد الأقصى 12)</label>
                 <div class="nav-checker-box">
@@ -74,7 +75,23 @@
         <div class="page-body">
             <button class="ff-btn" onclick="toggleView('symbols-section')">رموز فري فاير (الآلاف) ▼</button>
             <div id="symbols-section" style="display:none; background: #1a1a2e; padding: 15px; border-radius: 10px;">
-                <div id="symbols-container" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;"></div>
+          <div style="margin-bottom: 15px;">
+    <input type="text" id="symbols-name-input" placeholder="اكتب اسمك هنا ثم اضغط على الرموز..."
+        style="width: 100%; padding: 12px; background: #0d0d1a; color: #00ffcc; border: 1px solid #00ffcc; border-radius: 8px; font-family: 'Tajawal', sans-serif; font-size: 16px; text-align: right; box-sizing: border-box;">
+    <div style="display: flex; gap: 10px; margin-top: 10px;">
+        <button onclick="
+            const val = document.getElementById('symbols-name-input').value;
+            if(val) { navigator.clipboard.writeText(val); showToast('تم النسخ ✅'); }
+        " style="flex:1; padding: 10px; background: linear-gradient(45deg, #00ffcc, #0077ff); color: #000; border: none; border-radius: 8px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer;">
+            📋 نسخ الاسم
+        </button>
+        <button onclick="document.getElementById('symbols-name-input').value = '';"
+            style="padding: 10px 15px; background: #ff0055; color: #fff; border: none; border-radius: 8px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer;">
+            🗑️ مسح
+        </button>
+    </div>
+</div>
+<div id="symbols-container" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;"></div>
             </div>
 
             <button class="ff-btn" onclick="toggleView('bio-section')">أكواد البيو الجاهزة ▼</button>
@@ -107,8 +124,7 @@
             <button id="generate-clan-btn" style="background: linear-gradient(45deg, #ff0055, #7a00ff); color: white; border: none; padding: 12px 30px; border-radius: 8px; font-family: 'Tajawal', sans-serif; font-size: 16px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4);">⚔️ توليد اسم جديد</button>
             <div class="ff-big-logo">FREE FIRE</div>
         </div>
-    </div>
-
+</div>
     <div class="container">
         <h1>👑 IMAD 👑</h1>
         <p class="subtitle">أدخل اسمك، وشاهد مئات الزخارف والخطوط النادرة تتولد فوراً!</p>
@@ -161,27 +177,21 @@
 
     <script src="script.js"></script>
 
-    <script>
-        // سكربت تبديل الوضع (نهاري/ليلي)
-        const btn = document.getElementById('theme-toggle');
-        btn.addEventListener('click', function() {
-            const body = document.body;
-            if (body.style.background === 'white') {
-                body.style.background = '#0d0d1a';
-                body.style.color = 'white';
-                btn.innerText = '🌙 الوضع الليلي';
-                btn.style.background = '#1a1a2e';
-                btn.style.color = '#00ffcc';
-            } else {
-                body.style.background = 'white';
-                body.style.color = 'black';
-                btn.innerText = '☀️ الوضع النهاري';
-                btn.style.background = '#f0f0f0';
-                btn.style.color = '#1a1a2e';
-            }
-        });
-    </script>
-  <div class="ad-sticky-footer">
+<script>
+    const btn = document.getElementById('theme-toggle');
+    btn.addEventListener('click', function() {
+        document.body.classList.toggle('light-mode');
+        if (document.body.classList.contains('light-mode')) {
+            btn.innerText = '☀️ الوضع النهاري';
+        } else {
+            btn.innerText = '🌙 الوضع الليلي';
+        }
+    });
+    <button id="install-btn" style="display:none; width: 100%; background: linear-gradient(45deg, #00ffcc, #0077ff); color: #000; border: none; padding: 15px; border-radius: 10px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer; margin-top: 10px;">
+    📲 تثبيت التطبيق
+</button>
+</script>
+    <div class="ad-sticky-footer">
     <script type="text/javascript">
       atOptions = {
         'key' : '23bfb8c7bf2d740e8f75512bf519448f',
@@ -193,18 +203,22 @@
     </script>
     <script type="text/javascript" src="https://www.highperformanceformat.com/23bfb8c7bf2d740e8f75512bf519448f/invoke.js"></script>
 </div>
-<div class="ad-sticky-footer">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : '23bfb8c7bf2d740e8f75512bf519448f',
-        'format' : 'iframe',
-        'height' : 50,
-        'width' : 320,
-        'params' : {}
-      };
-    </script>
-    <script type="text/javascript" src="https://www.highperformanceformat.com/23bfb8c7bf2d740e8f75512bf519448f/invoke.js"></script>
-</div>
-
+<button id="back-to-top" title="العودة للأعلى" style="
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(45deg, #00ffcc, #0077ff);
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,255,204,0.4);
+    transition: all 0.3s ease;
+   ">▲</button>
 </body>
 </html>
