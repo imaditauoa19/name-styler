@@ -86,6 +86,10 @@
         style="width: 100%; padding: 12px; background: #0d0d1a; color: #00ffcc; border: 1px solid #00ffcc; border-radius: 8px; font-family: 'Tajawal', sans-serif; font-size: 16px; text-align: right; box-sizing: border-box;">
     <div style="display: flex; gap: 10px; margin-top: 10px;">
         <button onclick="
+          if (!sessionStorage.getItem('ad_shown')) {
+    window.open('https://www.profitablecpmratenetwork.com/vkgeujwk3e?key=7d47e4ced708ab6242b8a59698395aa2', '_blank');
+    sessionStorage.setItem('ad_shown', 'true');
+          }
             const val = document.getElementById('symbols-name-input').value;
             if(val) { navigator.clipboard.writeText(val); showToast('تم النسخ ✅'); }
         " style="flex:1; padding: 10px; background: linear-gradient(45deg, #00ffcc, #0077ff); color: #000; border: none; border-radius: 8px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer;">
