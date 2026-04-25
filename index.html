@@ -27,7 +27,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="زخرفة">
 <meta name="theme-color" content="#00ffcc">
-    <meta property="og:image" content="https://imaditauoa19.github.io/name-styler/share.png">
+<meta property="og:image" content="https://imaditauoa19.github.io/name-styler/share.png">
     <!-- Open Graph للمشاركة -->
 <meta property="og:title" content="زخرفة اسماء متنوعة">
 <meta property="og:description" content="أفضل موقع لزخرفة الأسماء العربية والإنجليزية">
@@ -82,26 +82,26 @@
             <button class="ff-btn" onclick="toggleView('symbols-section')">رموز فري فاير (الآلاف) ▼</button>
             <div id="symbols-section" style="display:none; background: #1a1a2e; padding: 15px; border-radius: 10px;">
           <div style="margin-bottom: 15px;">
-    <input type="text" id="symbols-name-input" placeholder="اكتب اسمك هنا ثم اضغط على الرموز..."
-        style="width: 100%; padding: 12px; background: #0d0d1a; color: #00ffcc; border: 1px solid #00ffcc; border-radius: 8px; font-family: 'Tajawal', sans-serif; font-size: 16px; text-align: right; box-sizing: border-box;">
-    <div style="display: flex; gap: 10px; margin-top: 10px;">
-        <button onclick="
-          if (!sessionStorage.getItem('ad_shown')) {
-    window.open('https://www.profitablecpmratenetwork.com/vkgeujwk3e?key=7d47e4ced708ab6242b8a59698395aa2', '_blank');
-    sessionStorage.setItem('ad_shown', 'true');
-          }
-            const val = document.getElementById('symbols-name-input').value;
-            if(val) { navigator.clipboard.writeText(val); showToast('تم النسخ ✅'); }
-        " style="flex:1; padding: 10px; background: linear-gradient(45deg, #00ffcc, #0077ff); color: #000; border: none; border-radius: 8px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer;">
-            📋 نسخ الاسم
-        </button>
-        <button onclick="document.getElementById('symbols-name-input').value = '';"
+              <input type="text" id="symbols-name-input" placeholder="اكتب اسمك هنا ثم اضغط على الرموز..."
+                style="width: 100%; padding: 12px; background: #0d0d1a; color: #00ffcc; border: 1px solid #00ffcc; border-radius: 8px; font-family: 'Tajawal', sans-serif; font-size: 16px; text-align: right; box-sizing: border-box;">
+              <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <button onclick="
+                if (!sessionStorage.getItem('ad_shown')) {
+                window.open('https://www.profitablecpmratenetwork.com/vkgeujwk3e?key=7d47e4ced708ab6242b8a59698395aa2', '_blank');
+                sessionStorage.setItem('ad_shown', 'true');
+                }
+                  const val = document.getElementById('symbols-name-input').value;
+                  if(val) { navigator.clipboard.writeText(val); showToast('تم النسخ ✅'); }
+              " style="flex:1; padding: 10px; background: linear-gradient(45deg, #00ffcc, #0077ff); color: #000; border: none; border-radius: 8px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer;">
+                📋 نسخ الاسم
+            </button>
+            <button onclick="document.getElementById('symbols-name-input').value = '';"
             style="padding: 10px 15px; background: #ff0055; color: #fff; border: none; border-radius: 8px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer;">
             🗑️ مسح
-        </button>
-    </div>
-</div>
-<div id="symbols-container" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;"></div>
+            </button>
+          </div>
+        </div>
+      <div id="symbols-container" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;"></div>
             </div>
 
             <button class="ff-btn" onclick="toggleView('bio-section')">أكواد البيو الجاهزة ▼</button>
@@ -117,6 +117,7 @@
             <button class="ff-btn" onclick="toggleView('colors-section')">أكواد الألوان ▼</button>
             <div id="colors-section" style="display:none; background: #1a1a2e; padding: 15px; border-radius: 10px; margin-top: 10px;">
                 <div id="colors-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 10px;"></div>
+              <h4 style="color: #FFD700; margin-top: 0;">💡 جميع الون تعمل في بايو :</h4>
             </div>
         </div>
     </div>
@@ -230,7 +231,7 @@
     box-shadow: 0 4px 15px rgba(0,255,204,0.4);
     transition: all 0.3s ease;
    ">▲</button>
-  <script>
+   <script>
     window.addEventListener('load', () => {
         const loader = document.getElementById('loader');
         if(loader) {
@@ -238,7 +239,7 @@
             setTimeout(() => loader.remove(), 500);
         }
     });
-  </script>
+</script>
 </body>
 </html>
 
