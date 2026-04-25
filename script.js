@@ -3,15 +3,36 @@ let currentFilter = 'all';
 // خرائط الحروف الإنجليزية
 const fonts = {
     circle: { a: 'ⓐ', b: 'ⓑ', c: 'ⓒ', d: 'ⓓ', e: 'ⓔ', f: 'ⓕ', g: 'ⓖ', h: 'ⓗ', i: 'ⓘ', j: 'ⓙ', k: 'ⓚ', l: 'ⓛ', m: 'ⓜ', n: 'ⓝ', o: 'ⓞ', p: 'ⓟ', q: 'ⓠ', r: 'ⓡ', s: 'ⓢ', t: 'ⓣ', u: 'ⓤ', v: 'ⓥ', w: 'ⓦ', x: 'ⓧ', y: 'ⓨ', z: 'ⓩ' },
+    
     square: { a: '🄰', b: '🄱', c: '🄲', d: '🄳', e: '🄴', f: '🄵', g: '🄶', h: '🄷', i: '🄸', j: '🄹', k: '🄺', l: '🄻', m: '🄼', n: '🄽', o: '🄾', p: '🄿', q: '🅀', r: '🅁', s: '🅂', t: '🅃', u: '🅄', v: '🅅', w: '🅆', x: '🅇', y: '🅈', z: '🅉' },
+    
     bold: { a: '𝐚', b: '𝐛', c: '𝐜', d: '𝐝', e: '𝐞', f: '𝐟', g: '𝐠', h: '𝐡', i: '𝐢', j: '𝐣', k: '𝐤', l: '𝐥', m: '𝐦', n: '𝐧', o: '𝐨', p: '𝐩', q: '𝐪', r: '𝐫', s: '𝐬', t: '𝐭', u: '𝐮', v: '𝐯', w: '𝐰', x: '𝐱', y: '𝐲', z: '𝐳' },
+    
     italic: { a: '𝘢', b: '𝘣', c: '𝘤', d: '𝘥', e: '𝘦', f: '𝘧', g: '𝘨', h: '𝘩', i: '𝘪', j: '𝘫', k: '𝘬', l: '𝘭', m: '𝘮', n: '𝘯', o: '𝘰', p: '𝘱', q: '𝘲', r: '𝘳', s: '𝘴', t: '𝘵', u: '𝘶', v: '𝘷', w: '𝘸', x: '𝘹', y: '𝘺', z: '𝘻' },
+    
     gothic: { a: '𝔄', b: '𝔅', c: 'ℭ', d: '𝔇', e: '𝔈', f: '𝔉', g: '𝔊', h: 'ℌ', i: 'ℑ', j: '𝔍', k: '𝔎', l: '𝔏', m: '𝔐', n: '𝔑', o: '𝔒', p: '𝔓', q: '𝔔', r: 'ℜ', s: '𝔖', t: '𝔗', u: '𝔘', v: '𝔙', w: '𝔚', x: '𝔛', y: '𝔜', z: 'ℨ' },
+    
     double: { a: '𝕒', b: '𝕓', c: '𝕔', d: '𝕕', e: '𝕖', f: '𝕗', g: '𝕘', h: '𝕙', i: '𝕚', j: '𝕛', k: '𝕜', l: '𝕝', m: '𝕞', n: '𝕟', o: '𝕠', p: '𝕡', q: '𝕢', r: '𝕣', s: '𝕤', t: '𝕥', u: '𝕦', v: '𝕧', w: '𝕨', x: '𝕩', y: '𝕪', z: '𝕫' },
+    
     smallCaps: { a: 'ᴀ', b: 'ʙ', c: 'ᴄ', d: 'ᴅ', e: 'ᴇ', f: 'ꜰ', g: 'ɢ', h: 'ʜ', i: 'ɪ', j: 'ᴊ', k: 'ᴋ', l: 'ʟ', m: 'ᴍ', n: 'ɴ', o: 'ᴏ', p: 'ᴘ', q: 'ǫ', r: 'ʀ', s: 's', t: 'ᴛ', u: 'ᴜ', v: 'ᴠ', w: 'ᴡ', x: 'x', y: 'ʏ', z: 'ᴢ' },
+    
     inverted: { a: 'ɐ', b: 'q', c: 'ɔ', d: 'p', e: 'ǝ', f: 'ɟ', g: 'ƃ', h: 'ɥ', i: 'ᴉ', j: 'ɾ', k: 'ʞ', l: 'l', m: 'ɯ', n: 'u', o: 'o', p: 'd', q: 'b', r: 'ɹ', s: 's', t: 'ʇ', u: 'n', v: 'ʌ', w: 'ʍ', x: 'x', y: 'ʎ', z: 'z' },
+    
     strike: { a: 'a̶', b: 'b̶', c: 'c̶', d: 'd̶', e: 'e̶', f: 'f̶', g: 'g̶', h: 'h̶', i: 'i̶', j: 'j̶', k: 'k̶', l: 'l̶', m: 'm̶', n: 'n̶', o: 'o̶', p: 'p̶', q: 'q̶', r: 'r̶', s: 's̶', t: 't̶', u: 'u̶', v: 'v̶', w: 'w̶', x: 'x̶', y: 'y̶', z: 'z̶' },
-    tiny: {'a': '𝓪', 'b': '𝓫', 'c': '𝓬', 'd': '𝓭', 'e': '𝓮', 'f': '𝓯', 'g': '𝓰', 'h': '𝓱', 'i': '𝓲', 'j': '𝓳', 'k': '𝓴', 'l': '𝓵', 'm': '𝓶', 'n': '𝓷', 'o': '𝓸', 'p': '𝓹', 'q': '𝓺', 'r': '𝓻', 's': '𝓼', 't': '𝓽', 'u': '𝓾', 'v': '𝓿', 'w': '𝔀', 'x': '𝔁', 'y': '𝔂', 'z': '𝔃' }
+    
+    tiny: {'a': '𝓪', 'b': '𝓫', 'c': '𝓬', 'd': '𝓭', 'e': '𝓮', 'f': '𝓯', 'g': '𝓰', 'h': '𝓱', 'i': '𝓲', 'j': '𝓳', 'k': '𝓴', 'l': '𝓵', 'm': '𝓶', 'n': '𝓷', 'o': '𝓸', 'p': '𝓹', 'q': '𝓺', 'r': '𝓻', 's': '𝓼', 't': '𝓽', 'u': '𝓾', 'v': '𝓿', 'w': '𝔀', 'x': '𝔁', 'y': '𝔂', 'z': '𝔃' },
+    
+    doubleStruck: {'a':'𝕒','b':'𝕓','c':'𝕔','d':'𝕕','e':'𝕖','f':'𝕗','g':'𝕘','h':'𝕙','i':'𝕚','j':'𝕛','k':'𝕜','l':'𝕝','m':'𝕞','n':'𝕟','o':'𝕠','p':'𝕡','q':'𝕢','r':'𝕣','s':'𝕤','t':'𝕥','u':'𝕦','v':'𝕧','w':'𝕨','x':'𝕩','y':'𝕪','z':'𝕫','A':'𝔸','B':'𝔹','C':'ℂ','D':'𝔻','E':'𝔼','F':'𝔽','G':'𝔾','H':'ℍ','I':'𝕀','J':'𝕁','K':'𝕂','L':'𝕃','M':'𝕄','N':'ℕ','O':'𝕆','P':'ℙ','Q':'ℚ','R':'ℝ','S':'𝕊','T':'𝕋','U':'𝕌','V':'𝕍','W':'𝕎','X':'𝕏','Y':'𝕐','Z':'ℤ'},
+
+    currency: {'a':'₳','b':'฿','c':'₵','d':'Đ','e':'Ɇ','f':'₣','g':'₲','h':'Ⱨ','i':'ł','j':'J','k':'₭','l':'Ⱡ','m':'₥','n':'₦','o':'Ø','p':'₱','q':'Q','r':'Ɽ','s':'₴','t':'₮','u':'Ʉ','v':'V','w':'₩','x':'Ӿ','y':'Ɏ','z':'Ⱬ','A':'₳','B':'฿','C':'₵','D':'Đ','E':'Ɇ','F':'₣','G':'₲','H':'Ⱨ','I':'ł','J':'J','K':'₭','L':'Ⱡ','M':'₥','N':'₦','O':'Ø','P':'₱','Q':'Q','R':'Ɽ','S':'₴','T':'₮','U':'Ʉ','V':'V','W':'₩','X':'Ӿ','Y':'Ɏ','Z':'Ⱬ'},
+
+    small: {'a':'ᵃ','b':'ᵇ','c':'ᶜ','d':'ᵈ','e':'ᵉ','f':'ᶠ','g':'ᵍ','h':'ʰ','i':'ⁱ','j':'ʲ','k':'ᵏ','l':'ˡ','m':'ᵐ','n':'ⁿ','o':'ᵒ','p':'ᵖ','q':'ᵠ','r':'ʳ','s':'ˢ','t':'ᵗ','u':'ᵘ','v':'ᵛ','w':'ʷ','x':'ˣ','y':'ʸ','z':'ᶻ','A':'ᵃ','B':'ᵇ','C':'ᶜ','D':'ᵈ','E':'ᵉ','F':'ᶠ','G':'ᵍ','H':'ʰ','I':'ⁱ','J':'ʲ','K':'ᵏ','L':'ˡ','M':'ᵐ','N':'ⁿ','O':'ᵒ','P':'ᵖ','Q':'ᵠ','R':'ʳ','S':'ˢ','T':'ᵗ','U':'ᵘ','V':'ᵛ','W':'ʷ','X':'ˣ','Y':'ʸ','Z':'ᶻ'},
+
+    gothic: {'a':'ǟ','b':'ɮ','c':'ċ','d':'ɖ','e':'ɛ','f':'ɮ','g':'ɢ','h':'ɦ','i':'ɨ','j':'ʝ','k':'ҡ','l':'ʟ','m':'ʍ','n':'ռ','o':'օ','p':'ք','q':'զ','r':'ʀ','s':'ֆ','t':'ŧ','u':'ʊ','v':'ʋ','w':'ɯ','x':'ӿ','y':'ʏ','z':'ʐ','A':'ǟ','B':'ɮ','C':'ċ','D':'ɖ','E':'ɛ','F':'ɮ','G':'ɢ','H':'ɦ','I':'ɨ','J':'ʝ','K':'ҡ','L':'ʟ','M':'ʍ','N':'ռ','O':'օ','P':'ք','Q':'զ','R':'ʀ','S':'ֆ','T':'ŧ','U':'ʊ','V':'ʋ','W':'ɯ','X':'ӿ','Y':'ʏ','Z':'ʐ'},
+
+    russian: {'a':'Д','b':'Б','c':'Ҁ','d':'Д','e':'Є','f':'Ғ','g':'Ԍ','h':'н','i':'і','j':'ј','k':'к','l':'г','m':'м','n':'ҋ','o':'ө','p':'р','q':'ҩ','r':'я','s':'Ѕ','t':'т','u':'Ұ','v':'ѵ','w':'ш','x':'х','y':'у','z':'ҙ','A':'Д','B':'Б','C':'Ҁ','D':'Д','E':'Є','F':'Ғ','G':'Ԍ','H':'н','I':'і','J':'ј','K':'к','L':'г','M':'м','N':'ҋ','O':'ө','P':'р','Q':'ҩ','R':'я','S':'Ѕ','T':'т','U':'Ұ','V':'ѵ','W':'ш','X':'х','Y':'у','Z':'ҙ'},
+
+    boxed: {'a':'a̲̅','b':'b̲̅','c':'c̲̅','d':'d̲̅','e':'e̲̅','f':'f̲̅','g':'g̲̅','h':'h̲̅','i':'i̲̅','j':'j̲̅','k':'k̲̅','l':'l̲̅','m':'m̲̅','n':'n̲̅','o':'o̲̅','p':'p̲̅','q':'q̲̅','r':'r̲̅','s':'s̲̅','t':'t̲̅','u':'u̲̅','v':'v̲̅','w':'w̲̅','x':'x̲̅','y':'y̲̅','z':'z̲̅','A':'A̲̅','B':'B̲̅','C':'C̲̅','D':'D̲̅','E':'E̲̅','F':'F̲̅','G':'G̲̅','H':'H̲̅','I':'I̲̅','J':'J̲̅','K':'K̲̅','L':'L̲̅','M':'M̲̅','N':'N̲̅','O':'O̲̅','P':'P̲̅','Q':'Q̲̅','R':'R̲̅','S':'S̲̅','T':'T̲̅','U':'U̲̅','V':'V̲̅','W':'W̲̅','X':'X̲̅','Y':'Y̲̅','Z':'Z̲̅'}
 };
 
 // قواميس الزخرفة العربية
@@ -40,6 +61,8 @@ const ffBios = [
     { name: "برشلونة", code: "[b]F.C.B\n[A50044]██[004D98]██\n[004D98]██[A50044]██" },
     { name: "ريال", code: "[b]R.M.A\n[Ffffff]██[0A1A57]██\n[0A1A57]██[ffffff]██" },
     { name: "إنستا", code: "[b][c]╭─╮\n︱◯֯︱ɪɴꜱᴛᴀ حط اسمك [ff00ff]\n╰─╯" },
+    { name: "يوتيوب", code: "[b][c]╭─╮\n︱▶֯︱ʏᴏᴜᴛᴜʙᴇ حط اسمك [ff0000]\n╰─╯" },
+    { name: "تيك توك", code: "[b][c]╭─╮\n︱🎵֯︱ᴛɪᴋ ᴛᴏᴋ حط اسمك [00f2ea]\n╰─╯" },
     { name: "بينق", code: "[FF0000] ᯤ 9 9 9 +" },
     { name: "نبض", code: "[ff0000]ﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـ⁷" },
     { name: "علم الجزائر (رموز)", code: "[008751]█[ffffff]☪[ff0000]✧[ffffff]█" },
@@ -59,17 +82,17 @@ const ffBios = [
    { name: "لانهاية", code: "[b][c][00ffcc] ∞ [ffffff] INFINITY [00ffcc] ∞ " },
    { name: "كود البطارية", code: "[b][00ff00] [||||||||||] 100%" },
    { name: "برواز ملكي", code: "[b][c][ffffff]╔════════════════╗\n[ffd700]  YOUR NAME HERE  \n[ffffff]╚════════════════╝" },
-         { name: "إشارة الرادار", code: "[b][c][00ff00]  ▂ ▃ ▄ ▅ ▆ ▇ █ [ffffff] 100%" },
-        { name: "جمجمة رعب", code: "[b][c][ffffff]☠️ [ff0000] K I L L E R [ffffff] ☠️" },
-        { name: "اسم ملون 1", code: "[b][ff0000]S[ffff00]T[00ff00]E[00ffff]R[0000ff]B[ff00ff]E[ff0000]N" },
-        { name: "تيك توك", code: "[b][c][00ffff]ᴛɪᴋ [ffffff]ᴛᴏᴋ [ff0055] حط اسمك" },
-        { name: "كود الأوفلاين", code: "[b][c][808080]● Offline [ffffff] (عدت لاحقاً)" },
-        { name: "قلب مكسور", code: "[b][c][ff0000]💔 [808080] sᴀᴅ sᴛᴏʀʏ" },
-        { name: "رتبة هيرويك", code: "[b][c][ff0000]──[ HEROIC ]──" },
-        { name: "مستوى ليفل", code: "[b][ffd700]LEVEL: [ffffff] 100 [ff0000]🔥" },
-        { name: "قراصنة", code: "[b][c][000000]🏴‍☠️ [ffffff] 𝕻𝕴𝕽𝕬𝕿𝕰𝕾" },
-        { name: "زاوية حادة", code: "[b][c][00ffcc]◤ [ffffff] اسمك هنا [00ffcc] ◢" },
-        { name: "اقتباس عميق", code: "[b][i][ffffff]\"الصمت هو لغتي\"" }
+   { name: "إشارة الرادار", code: "[b][c][00ff00]  ▂ ▃ ▄ ▅ ▆ ▇ █ [ffffff] 100%" },
+    { name: "جمجمة رعب", code: "[b][c][ffffff]☠️ [ff0000] K I L L E R [ffffff] ☠️" },
+    { name: "اسم ملون 1", code: "[b][ff0000]S[ffff00]T[00ff00]E[00ffff]R[0000ff]B[ff00ff]E[ff0000]N" },
+    { name: "تيك توك", code: "[b][c][00ffff]ᴛɪᴋ [ffffff]ᴛᴏᴋ [ff0055] حط اسمك" },
+    { name: "كود الأوفلاين", code: "[b][c][808080]● Offline [ffffff] (عدت لاحقاً)" },
+    { name: "قلب مكسور", code: "[b][c][ff0000]💔 [808080] sᴀᴅ sᴛᴏʀʏ" },
+    { name: "رتبة هيرويك", code: "[b][c][ff0000]──[ HEROIC ]──" },
+    { name: "مستوى ليفل", code: "[b][ffd700]LEVEL: [ffffff] 100 [ff0000]🔥" },
+    { name: "قراصنة", code: "[b][c][000000]🏴‍☠️ [ffffff] 𝕻𝕴𝕽𝕬𝕿𝕰𝕾" },
+    { name: "زاوية حادة", code: "[b][c][00ffcc]◤ [ffffff] اسمك هنا [00ffcc] ◢" },
+    { name: "اقتباس عميق", code: "[b][i][ffffff]\"الصمت هو لغتي\"" }
 
 ];
 
@@ -97,8 +120,18 @@ const ffSymbols = [
     '⚡︎', '×', '÷', '＋', '－', '％', '＠', '＃', '＆', '＊', '☠', '☣', '☢', '❂', '❃', '❄', '❅', '❆', '❈', '❉', '❊', '❋',
     '♩', '♪', '♫', '♬', '♭', '♮', '♯', '■', '□', '▢', '▣', '▤', '▥', '▦', '▧', '▨', '▩', '▪', '▫', '▬', '▭', '▮', '▯', '▲', '△', '▴', '▵', '▶', '▷', '▸', '▹', '►', '◄', '▼', '▽', '▾', '▿', '◀', '◁', '◂', '◃', '◅',
     '၄', '么', 'ϟ', '玄', 'あ', '幺', '夂', '༆', 'ゑ', '→', 'Ξ', '特', 'ꪇ', '✓', '☂', 'ℵ', '←', '神', '✿', 'ƬψƬ', '³²⁰', 'シ', '×͜×', '〄',
-    '♜', '♝', '♞', '♟', '☚', '☛', '☜', '☝', '☞', '☟', '✌', '☩', '⋆', '✢', '✣', '✤', '✥', '✩', '✫', '✬', '✭', '✮', '✯', '✰', '✱', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '-‘๑’-', '✽', '✾', '❀', '❁', '❃', '❋', '☼', '☀', '☁', '☄', '☇', '☈', '⊙', '☉', '℃', '℉', '°', '❅', '✺', '☦', '☓', '♁', 'Ⓐ', '☭', '☪', '𖤐', 'Ϟ', '⺓', 'ξ', 'ነ', '่', '♡', '؁', '؀', '༺ཌ༈༈ད༻', '༺༻', '♧', '🇮', '﷼', 'ﷻ', '﷽', 'ッ', 'Ω', '۞', '۩', '✟', '۝', '道', '凸', '个', '¤', '品', '〠', '𖤍', 'ᶠᶸᶜᵏᵧₒᵤ', '⍆', '⍅', '⇭', '', '', '𖠃', '𖠅', '𖠆', '𖠊', '𖡒', '𖡗', '𖣩', '〰', '𖥓', '𖥏', '𖥎', '𖥌', '𖥋', '𖥊', '𖥈', '𖥅', '𖥃', '𖥂', '𖥀', '𖤼', '𖤹', '𖤸', '𖤷', '𖤶', '𖤭', '𖤫', '𖤪', '𖤨', '𖤧', '𖤥', '𖤤', '𖤣', '𖤢', '𖤡', '𖤟', '𖤞', '𖤝', '𖤜', '𖤛', '𖤚', '𖤘', '𖤙', '𖤗', '𖤕', '𖤓', '𖤒', 'ဏ', '࿘', '࿗', '࿖', '࿕', '࿑', '࿌', '࿋', '࿊', '࿉', '࿈', '࿇', '࿅', '࿄', '࿃', '࿂', '༼', '༽', '༗', '༖', '༕', '⏝', '⏜', '߷', 'ܛ', '׀','⚔'
-    
+    '♜', '♝', '♞', '♟', '☚', '☛', '☜', '☝', '☞', '☟', '✌', '☩', '⋆', '✢', '✣', '✤', '✥', '✩', '✫', '✬', '✭', '✮', '✯', '✰', '✱', '✲', '✳', '✴', '✵', '✶', '✷', '✸', '✹', '-‘๑’-', '✽', '✾', '❀', '❁', '❃', '❋', '☼', '☀', '☁', '☄', '☇', '☈', '⊙', '☉', '℃', '℉', '°', '❅', '✺', '☦', '☓', '♁', 'Ⓐ', '☭', '☪', '𖤐', 'Ϟ', '⺓', 'ξ', 'ነ', '่', '♡', '؁', '؀', '༺ཌ༈༈ད༻', '༺༻', '♧', '🇮', '﷼', 'ﷻ', '﷽', 'ッ', 'Ω', '۞', '۩', '✟', '۝', '道', '凸', '个', '¤', '品', '〠', '𖤍', 'ᶠᶸᶜᵏᵧₒᵤ', '⍆', '⍅', '⇭', '', '', '𖠃', '𖠅', '𖠆', '𖠊', '𖡒', '𖡗', '𖣩', '〰', '𖥓', '𖥏', '𖥎', '𖥌', '𖥋', '𖥊', '𖥈', '𖥅', '𖥃', '𖥂', '𖥀', '𖤼', '𖤹', '𖤸', '𖤷', '𖤶', '𖤭', '𖤫', '𖤪', '𖤨', '𖤧', '𖤥', '𖤤', '𖤣', '𖤢', '𖤡', '𖤟', '𖤞', '𖤝', '𖤜', '𖤛', '𖤚', '𖤘', '𖤙', '𖤗', '𖤕', '𖤓', '𖤒', 'ဏ', '࿘', '࿗', '࿖', '࿕', '࿑', '࿌', '࿋', '࿊', '࿉', '࿈', '࿇', '࿅', '࿄', '࿃', '࿂', '༼', '༽', '༗', '༖', '༕', '⏝', '⏜', '߷', 'ܛ', '׀','⚔',
+    // أرقام مزخرفة
+    '⓪','①','②','③','④','⑤','⑥','⑦','⑧','⑨',
+    '⓿','❶','❷','❸','❹','❺','❻','❼','❽','❾',
+    '𝟘','𝟙','𝟚','𝟛','𝟜','𝟝','𝟞','𝟟','𝟠','𝟡',
+    '⁰','¹','²','³','⁴','⁵','⁶','⁷','⁸','⁹',
+    '𝟎','𝟏','𝟐','𝟑','𝟒','𝟓','𝟔','𝟕','𝟖','𝟗',
+    '𝟬','𝟭','𝟮','𝟯','𝟰','𝟱','𝟲','𝟳','𝟴','𝟵',
+    'Ⅰ','Ⅱ','Ⅲ','Ⅳ','Ⅴ','Ⅵ','Ⅶ','Ⅷ','Ⅸ','Ⅹ',
+    'ⅰ','ⅱ','ⅲ','ⅳ','ⅴ','ⅵ','ⅶ','ⅷ','ⅸ','ⅹ',
+    '٠','١','٢','٣','٤','٥','٦','٧','٨','٩',
+    '۰','۱','۲','۳','۴','۵','۶','۷','۸','۹',
 ];
 
 // كلمات الكلان
@@ -134,6 +167,10 @@ const rawTemplates = [
 // 2. دوال النسخ والرسائل الاحترافية
 // ==========================================
 function copyText(text, name = "") {
+  // حفظ في الأكثر نسخاً
+    const stats = JSON.parse(localStorage.getItem('copyStats') || '{}');
+    stats[text] = (stats[text] || 0) + 1;
+    localStorage.setItem('copyStats', JSON.stringify(stats));
     navigator.clipboard.writeText(text).then(() => {
         showToast(`تم نسخ ${name || text} بنجاح ✅`);
     });
@@ -198,6 +235,7 @@ function filterType(type) {
 
 function generateAllDecorations() {
     const input = document.getElementById('username').value.trim();
+    document.title = input ? `زخرفة اسم ${input} | زخرفة فري فاير` : 'زخرفة اسماء متنوعة';
     const resultsContainer = document.getElementById('results');
     const statsText = document.getElementById('stats-text');
     if (!resultsContainer) return;
@@ -254,6 +292,12 @@ function generateAllDecorations() {
         allDecorations.push({ type: 'en', text: applyFont(input, fonts.tiny, numberStyles.small) });
         allDecorations.push({ type: 'en', text: applyFont(input, fonts.inverted) });
         allDecorations.push({ type: 'en', text: applyFont(input, fonts.strike) });
+        allDecorations.push({ type: 'en', text: applyFont(input, fonts.doubleStruck, numberStyles.small) });
+        allDecorations.push({ type: 'en', text: applyFont(input, fonts.currency, numberStyles.small) });
+        allDecorations.push({ type: 'en', text: applyFont(input, fonts.small, numberStyles.small) });
+        allDecorations.push({ type: 'en', text: applyFont(input, fonts.gothic, numberStyles.small) });
+        allDecorations.push({ type: 'en', text: applyFont(input, fonts.russian, numberStyles.small) });
+        allDecorations.push({ type: 'en', text: applyFont(input, fonts.boxed, numberStyles.small) });
         allDecorations.push({ type: 'en', text: input.toUpperCase().split('').join(' ') });
         allDecorations.push({ type: 'en', text: input.toUpperCase().split('').join('　') });
         allDecorations.push({ type: 'en', text: `xX_${input}_Xx` });
@@ -299,7 +343,14 @@ function displaySymbols() {
             span.className = 'ff-symbol-item';
             span.innerText = sym;
             span.style.cssText = "cursor:pointer; padding:8px; background:#16213e; color:#fff; border-radius:5px; font-size:20px;";
-            span.onclick = () => copyText(sym);
+            span.onclick = () => {
+                const input = document.getElementById('symbols-name-input');
+                if (input) {
+                      input.value += sym;
+                    } else {
+                  copyText(sym);
+                }
+              };
             container.appendChild(span);
         });
     }
@@ -443,4 +494,45 @@ document.addEventListener('DOMContentLoaded', () => {
             contactBox.scrollIntoView({ behavior: 'smooth' });
         };
     }
+// زر العودة للأعلى// زر العودة للأعلى
+    const backToTop = document.getElementById('back-to-top');
+
+    window.addEventListener('scroll', () => {
+        backToTop.style.display = window.scrollY > 30 ? 'block' : 'none';
+    });
+
+    document.querySelectorAll('.page-body').forEach(page => {
+        page.addEventListener('scroll', () => {
+            backToTop.style.display = page.scrollTop > 30 ? 'block' : 'none';
+        });
+    });
+
+    backToTop.addEventListener('click', () => {
+  const activePage = document.querySelector('.ff-fullscreen-page.active .page-body');
+        if (activePage) {
+            activePage.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    });
+    // زر تثبيت التطبيق
+let deferredPrompt;
+const installBtn = document.getElementById('install-btn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    installBtn.style.display = 'block';
+});
+
+installBtn.addEventListener('click', async () => {
+    if (deferredPrompt) {
+        deferredPrompt.prompt();
+        const result = await deferredPrompt.userChoice;
+        if (result.outcome === 'accepted') {
+            installBtn.style.display = 'none';
+        }
+        deferredPrompt = null;
+    }
+});
 });
