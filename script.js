@@ -167,6 +167,7 @@ const rawTemplates = [
 // 2. دوال النسخ والرسائل الاحترافية
 // ==========================================
 function copyText(text, name = "") {
+  
   // حفظ في الأكثر نسخاً
     const stats = JSON.parse(localStorage.getItem('copyStats') || '{}');
     stats[text] = (stats[text] || 0) + 1;
@@ -515,6 +516,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     });
+    // زر تثبيت التطبيق
     let deferredPrompt;
     const installBtn = document.getElementById('install-btn');
 
