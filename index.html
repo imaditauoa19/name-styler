@@ -23,28 +23,27 @@
     <meta name="author" content="إمبراطور الزخرفة">
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="manifest" href="manifest.json">
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="زخرفة">
-<meta name="theme-color" content="#00ffcc">
-<meta property="og:image" content="https://imaditauoa19.github.io/name-styler/share.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="زخرفة">
+    <meta name="theme-color" content="#00ffcc">
+    <meta property="og:image" content="https://imaditauoa19.github.io/name-styler/share.png">
     <!-- Open Graph للمشاركة -->
-<meta property="og:title" content="زخرفة اسماء متنوعة">
-<meta property="og:description" content="أفضل موقع لزخرفة الأسماء العربية والإنجليزية">
-<meta property="og:type" content="website">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="زخرفة اسماء متنوعة">
+    <meta property="og:title" content="زخرفة اسماء متنوعة">
+    <meta property="og:description" content="أفضل موقع لزخرفة الأسماء العربية والإنجليزية">
+    <meta property="og:type" content="website">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="زخرفة اسماء متنوعة">
 </head>
 
 <body>
-<div id="loader">
-    <div class="loader-content">
-        <div class="loader-spinner"></div>
-        <p>جاري التحميل...</p>
+    <div id="loader">
+        <div class="loader-content">
+          <div class="loader-spinner"></div>
+          <p>جاري التحميل...</p>
+        </div>
     </div>
-</div>
     <div class="hamburger-menu" id="hamburger-btn">
         <span></span>
         <span></span>
@@ -52,18 +51,18 @@
     </div>
 
     <div class="side-nav" id="side-nav">
-        <div class="close-btn" id="close-btn">&times;</div>
+      <div class="close-btn" id="close-btn">&times;</div>
         <div class="nav-content">
             <button id="open-firefire-modal" style="width: 100%; background: linear-gradient(45deg, #00ffcc, #0077ff); color: white; border: none; padding: 15px; border-radius: 10px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4); margin-bottom: 10px;">🔥 زخرفة Bio وأكواد فري فاير</button>
-            <button id="open-clan-modal" style="width: 100%; background: linear-gradient(45deg, #00ffcc, #0077ff); color: white; border: none; padding: 15px; border-radius: 10px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 255, 204, 0.3);">🛡️ أفكار أسماء كلانات</button>
+              <button id="open-clan-modal" style="width: 100%; background: linear-gradient(45deg, #00ffcc, #0077ff); color: white; border: none; padding: 15px; border-radius: 10px; font-family: 'Tajawal', sans-serif; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 255, 204, 0.3);">🛡️ أفكار أسماء كلانات</button>
             <div class="nav-checker-section">
-                <label for="nav-check-input">📏 فاحص طول الاسم (الحد الأقصى 12)</label>
-                <div class="nav-checker-box">
-                    <input type="text" id="nav-check-input" placeholder="ألصق الاسم المزخرف هنا..." oninput="checkNavNameLength()">
-                    <div id="nav-checker-result" class="nav-checker-result">اكتب شيئاً للبدء...</div>
-                </div>
-            </div>
+              <label for="nav-check-input">📏 فاحص طول الاسم (الحد الأقصى 12)</label>
+              <div class="nav-checker-box">
+              <input type="text" id="nav-check-input" placeholder="ألصق الاسم المزخرف هنا..." oninput="checkNavNameLength()">
+            <div id="nav-checker-result" class="nav-checker-result">اكتب شيئاً للبدء...</div>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="overlay" id="overlay"></div>
@@ -143,10 +142,13 @@
             <input type="text" id="username" placeholder="اكتب اسمك هنا (عربي أو إنجليزي)..." oninput="generateAllDecorations()">
         </div>
         <div class="stats" id="stats-text">اكتب شيئاً لتبدأ السحر...</div>
-        <div class="tabs">
+        <div class="tabs" style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:8px;">
+            <button onclick="toggleSymPanel('right')" style="background:#1a1a2e; color:#00ffcc; border:1px solid #00ffcc; padding:5px 8px; border-radius:20px; cursor:pointer; font-size:16px; font-family:'Tajawal',sans-serif;">رمز ◀</button>
             <button class="tab-btn active" onclick="filterType('all')">الكل</button>
             <button class="tab-btn" onclick="filterType('ar')">عربي</button>
             <button class="tab-btn" onclick="filterType('en')">إنجليزي</button>
+            <button onclick="toggleSymPanel('left')" style="background:#1a1a2e; color:#00ffcc; border:1px solid #00ffcc; padding:5px 8px; border-radius:20px; cursor:pointer; font-size:16px; font-family:'Tajawal',sans-serif;">▶ رمز</button>
+            <div id="sym-panel" style="display:none; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:10px; background:#16162a; padding:10px; border-radius:10px; max-height:150px; overflow-y:auto; width:100%;"></div>
         </div>
         <div class="results-grid" id="results"></div>
     </div>
@@ -198,7 +200,8 @@
             btn.innerText = '🌙 الوضع الليلي';
         }
     });
-</script> 
+</script>
+
     <div class="ad-sticky-footer">
     <script type="text/javascript">
       atOptions = {
@@ -239,4 +242,5 @@
 </script>
 </body>
 </html>
+
 
