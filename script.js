@@ -41,7 +41,13 @@ const fonts = {
     // خط نقاط
     dots: {'a':'ȧ','b':'ḃ','c':'ċ','d':'ḋ','e':'ė','f':'ḟ','g':'ġ','h':'ḣ','i':'i','j':'j','k':'k','l':'l','m':'ṁ','n':'ṅ','o':'ȯ','p':'ṗ','q':'q','r':'ṙ','s':'ṡ','t':'ṫ','u':'u','v':'v','w':'ẇ','x':'ẋ','y':'ẏ','z':'ż','A':'Ȧ','B':'Ḃ','C':'Ċ','D':'Ḋ','E':'Ė','F':'Ḟ','G':'Ġ','H':'Ḣ','I':'I','J':'J','K':'K','L':'L','M':'Ṁ','N':'Ṅ','O':'Ȯ','P':'Ṗ','Q':'Q','R':'Ṙ','S':'Ṡ','T':'Ṫ','U':'U','V':'V','W':'Ẇ','X':'Ẋ','Y':'Ẏ','Z':'Ż'},
 
-    boxed: {'a':'a̲̅','b':'b̲̅','c':'c̲̅','d':'d̲̅','e':'e̲̅','f':'f̲̅','g':'g̲̅','h':'h̲̅','i':'i̲̅','j':'j̲̅','k':'k̲̅','l':'l̲̅','m':'m̲̅','n':'n̲̅','o':'o̲̅','p':'p̲̅','q':'q̲̅','r':'r̲̅','s':'s̲̅','t':'t̲̅','u':'u̲̅','v':'v̲̅','w':'w̲̅','x':'x̲̅','y':'y̲̅','z':'z̲̅','A':'A̲̅','B':'B̲̅','C':'C̲̅','D':'D̲̅','E':'E̲̅','F':'F̲̅','G':'G̲̅','H':'H̲̅','I':'I̲̅','J':'J̲̅','K':'K̲̅','L':'L̲̅','M':'M̲̅','N':'N̲̅','O':'O̲̅','P':'P̲̅','Q':'Q̲̅','R':'R̲̅','S':'S̲̅','T':'T̲̅','U':'U̲̅','V':'V̲̅','W':'W̲̅','X':'X̲̅','Y':'Y̲̅','Z':'Z̲̅'}
+    boxed: {'a':'a̲̅','b':'b̲̅','c':'c̲̅','d':'d̲̅','e':'e̲̅','f':'f̲̅','g':'g̲̅','h':'h̲̅','i':'i̲̅','j':'j̲̅','k':'k̲̅','l':'l̲̅','m':'m̲̅','n':'n̲̅','o':'o̲̅','p':'p̲̅','q':'q̲̅','r':'r̲̅','s':'s̲̅','t':'t̲̅','u':'u̲̅','v':'v̲̅','w':'w̲̅','x':'x̲̅','y':'y̲̅','z':'z̲̅','A':'A̲̅','B':'B̲̅','C':'C̲̅','D':'D̲̅','E':'E̲̅','F':'F̲̅','G':'G̲̅','H':'H̲̅','I':'I̲̅','J':'J̲̅','K':'K̲̅','L':'L̲̅','M':'M̲̅','N':'N̲̅','O':'O̲̅','P':'P̲̅','Q':'Q̲̅','R':'R̲̅','S':'S̲̅','T':'T̲̅','U':'U̲̅','V':'V̲̅','W':'W̲̅','X':'X̲̅','Y':'Y̲̅','Z':'Z̲̅'},
+
+    cursive: {'a':'𝒶','b':'𝒷','c':'𝒸','d':'𝒹','e':'𝑒','f':'𝒻','g':'𝑔','h':'𝒽','i':'𝒾','j':'𝒿','k':'𝓀','l':'𝓁','m':'𝓂','n':'𝓃','o':'𝑜','p':'𝓅','q':'𝓆','r':'𝓇','s':'𝓈','t':'𝓉','u':'𝓊','v':'𝓋','w':'𝓌','x':'𝓍','y':'𝓎','z':'𝓏','A':'𝒜','B':'𝐵','C':'𝒞','D':'𝒟','E':'𝐸','F':'𝐹','G':'𝒢','H':'𝐻','I':'𝐼','J':'𝒥','K':'𝒦','L':'𝐿','M':'𝑀','N':'𝒩','O':'𝒪','P':'𝒫','Q':'𝒬','R':'𝑅','S':'𝒮','T':'𝒯','U':'𝒰','V':'𝒱','W':'𝒲','X':'𝒳','Y':'𝒴','Z':'𝒵'},
+
+    outline: {'a':'𝖺','b':'𝖻','c':'𝖼','d':'𝖽','e':'𝖾','f':'𝖿','g':'𝗀','h':'𝗁','i':'𝗂','j':'𝗃','k':'𝗄','l':'𝗅','m':'𝗆','n':'𝗇','o':'𝗈','p':'𝗉','q':'𝗊','r':'𝗋','s':'𝗌','t':'𝗍','u':'𝗎','v':'𝗏','w':'𝗐','x':'𝗑','y':'𝗒','z':'𝗓','A':'𝖠','B':'𝖡','C':'𝖢','D':'𝖣','E':'𝖤','F':'𝖥','G':'𝖦','H':'𝖧','I':'𝖨','J':'𝖩','K':'𝖪','L':'𝖫','M':'𝖬','N':'𝖭','O':'𝖮','P':'𝖯','Q':'𝖰','R':'𝖱','S':'𝖲','T':'𝖳','U':'𝖴','V':'𝖵','W':'𝖶','X':'𝖷','Y':'𝖸','Z':'𝖹'},
+
+    monospace: {'a':'𝚊','b':'𝚋','c':'𝚌','d':'𝚍','e':'𝚎','f':'𝚏','g':'𝚐','h':'𝚑','i':'𝚒','j':'𝚓','k':'𝚔','l':'𝚕','m':'𝚖','n':'𝚗','o':'𝚘','p':'𝚙','q':'𝚚','r':'𝚛','s':'𝚜','t':'𝚝','u':'𝚞','v':'𝚟','w':'𝚠','x':'𝚡','y':'𝚢','z':'𝚣','A':'𝙰','B':'𝙱','C':'𝙲','D':'𝙳','E':'𝙴','F':'𝙵','G':'𝙶','H':'𝙷','I':'𝙸','J':'𝙹','K':'𝙺','L':'𝙻','M':'𝙼','N':'𝙽','O':'𝙾','P':'𝙿','Q':'𝚀','R':'𝚁','S':'𝚂','T':'𝚃','U':'𝚄','V':'𝚅','W':'𝚆','X':'𝚇','Y':'𝚈','Z':'𝚉'}
 };
 
 // قواميس الزخرفة العربية
@@ -49,7 +55,10 @@ const arabicStyles = [
     { map: { 'ا':'آ', 'ب':'بہ', 'ت':'تہ', 'ث':'ثہ', 'ج':'جہ', 'ح':'حہ', 'خ':'خہ', 'د':'د', 'ذ':'ذ', 'ر':'ر', 'ز':'ز', 'س':'سہ', 'ش':'شہ', 'ص':'صہ', 'ض':'ضّه', 'ط':'طه', 'ظ':'ظه', 'ع':'ع', 'غ':'غ', 'ف':'فه', 'ق':'قه', 'ك':'كہ', 'ل':'ل', 'م':'مہ', 'ن':'نہ', 'ه':'هہ', 'و':'و', 'ي':'ي' } },
     { map: { 'ا':'آ', 'ب':'بّـ', 'ت':'تُـ', 'ث':'ثًـ', 'ج':'جَـ', 'ح':'حًـ', 'خ':'خٌـ', 'س':'سًـ', 'ش':'شّـ', 'ص':'صِـ', 'ض':'ضًـ', 'ط':'طٌـ', 'ظ':'ظٌـ', 'ع':'عَـ', 'غ':'غّـ', 'ف':'فُـ', 'ق':'قَـ', 'ك':'ڪ', 'ل':'لَـ', 'م':'مِـ', 'ن':'نٌـ', 'ه':'هِـ', 'ي':'يّـ' } },
     { map: { 'ا':'آ', 'ب':'بـ༈ۖ҉ـ', 'ت':'تـ༈ۖ҉ـ', 'ث':'ثـ༈ۖ҉ـ', 'ج':'جـ༈ۖ҉ـ', 'ح':'حـ༈ۖ҉ـ', 'خ':'خـ༈ۖ҉ـ', 'س':'سـ༈ۖ҉ـ', 'ش':'شـ༈ۖ҉ـ', 'ص':'صـ༈ۖ҉ـ', 'ض':'ضـ༈ۖ҉ـ', 'ع':'عـ༈ۖ҉ـ', 'غ':'غـ༈ۖ҉ـ', 'ف':'فـ༈ۖ҉ـ', 'ق':'قـ༈ۖ҉ـ', 'ك':'كـ༈ۖ҉ـ', 'ل':'لـ༈ۖ҉ـ', 'م':'مـ༈ۖ҉ـ', 'ن':'نـ༈ۖ҉ـ', 'ه':'هـ༈ۖ҉ـ', 'ي':'يـ༈ۖ҉ـ' } },
-    { map: { 'ا':'آ', 'ب':'بّ', 'ت':'تُ', 'ث':'ثً', 'ج':'جَ', 'ح':'حً', 'خ':'خٌ', 'س':'سً', 'ش':'شّ', 'ص':'صِ', 'ض':'ضً', 'ط':'طٌ', 'ظ':'ظٌ', 'ع':'عَ', 'غ':'غّ', 'ف':'فُ', 'ق':'قَ', 'ك':'ڪ', 'ل':'لَ', 'م':'مِ', 'ن':'نٌ', 'ه':'هِ', 'ي':'يّ' } }
+    { map: { 'ا':'آ', 'ب':'بّ', 'ت':'تُ', 'ث':'ثً', 'ج':'جَ', 'ح':'حً', 'خ':'خٌ', 'س':'سً', 'ش':'شّ', 'ص':'صِ', 'ض':'ضً', 'ط':'طٌ', 'ظ':'ظٌ', 'ع':'عَ', 'غ':'غّ', 'ف':'فُ', 'ق':'قَ', 'ك':'ڪ', 'ل':'لَ', 'م':'مِ', 'ن':'نٌ', 'ه':'هِ', 'ي':'يّ' } },
+    { map: { 'ا':'ﭐ', 'ب':'ﭒ', 'ت':'ﭔ', 'ث':'ﭖ', 'ج':'ﭘ', 'ح':'ﭺ', 'خ':'ﭼ', 'د':'ﮈ', 'ر':'ﮌ', 'ز':'ﮎ', 'س':'ﯓ', 'ش':'ﯔ', 'ص':'ﯕ', 'ع':'ﯠ', 'غ':'ﯡ', 'ف':'ﯦ', 'ق':'ﯨ', 'ك':'ﰀ', 'ل':'ﻝ', 'م':'ﻡ', 'ن':'ﻥ', 'ه':'ﻩ', 'و':'ﻭ', 'ي':'ﻱ' } },
+    { map: { 'ا':'ا͠', 'ب':'ب͠', 'ت':'ت͠', 'ث':'ث͠', 'ج':'ج͠', 'ح':'ح͠', 'خ':'خ͠', 'د':'د͠', 'ذ':'ذ͠', 'ر':'ر͠', 'ز':'ز͠', 'س':'س͠', 'ش':'ش͠', 'ص':'ص͠', 'ض':'ض͠', 'ط':'ط͠', 'ظ':'ظ͠', 'ع':'ع͠', 'غ':'غ͠', 'ف':'ف͠', 'ق':'ق͠', 'ك':'ك͠', 'ل':'ل͠', 'م':'م͠', 'ن':'ن͠', 'ه':'ه͠', 'و':'و͠', 'ي':'ي͠' } },
+    { map: { 'ا':'ﺎ', 'ب':'ﺒ', 'ت':'ﺘ', 'ث':'ﺜ', 'ج':'ﺠ', 'ح':'ﺤ', 'خ':'ﺨ', 'د':'ﺪ', 'ذ':'ﺬ', 'ر':'ﺮ', 'ز':'ﺰ', 'س':'ﺴ', 'ش':'ﺸ', 'ص':'ﺼ', 'ض':'ﻀ', 'ط':'ﻄ', 'ظ':'ﻈ', 'ع':'ﻌ', 'غ':'ﻐ', 'ف':'ﻔ', 'ق':'ﻘ', 'ك':'ﻜ', 'ل':'ﻠ', 'م':'ﻤ', 'ن':'ﻨ', 'ه':'ﻬ', 'و':'ﻮ', 'ي':'ﻴ' } }
 ];
 
 // خرائط الأرقام
@@ -74,13 +83,13 @@ const ffBios = [
     { name: "تيك توك", code: "[b][c]╭─╮\n︱🎵֯︱ᴛɪᴋ ᴛᴏᴋ حط اسمك [00f2ea]\n╰─╯" },
     { name: "بينق", code: "[FF0000] ᯤ 9 9 9 +" },
     { name: "نبض", code: "[ff0000]ﮩ٨ـﮩﮩ٨ـ♡ﮩ٨ـﮩﮩ٨ـ⁷" },
-    { name: "علم الجزائر (رموز)", code: "[008751]█[ffffff]☪[ff0000]✧[ffffff]█" },
+    { name: "علم الجزائر", code: "[008751]██[ff0000]☾★[ffffff]██" },
     { name: "علم المغرب (رموز)", code: "[ff0000]█[00ff00]★[ff0000]█" },
     { name: "علم تونس (رموز)", code: "[ff0000]█[ffffff]☪[ff0000]█" },
     { name: "علم فلسطين (رموز)", code: "[000000]█[ffffff]█[008000]█\n[ff0000]▼" },
     { name: "علم السعودية", code: "[b][006c35]███[ffffff]⚔[006c35]███" },
     { name: "علم الإمارات", code: "[ff0000]█[008000]█[ffffff]█[000000]█" },
-   { name: "علم مصر", code: "[b][ff0000]███\n[ffffff]█[ffd700]🦅[ffffff]█\n[000000]███" },
+    { name: "علم مصر", code: "[b][ff0000]███\n[ffffff]█[ffd700]◆[ffffff]█\n[000000]███" },
    { name: "علم سوريا", code: "[b][ff0000]███\n[ffffff]★ ★\n[000000]███" },
     { name: "شحن البطارية", code: "[b][00ff00]🔋 [ffffff]████████▒ 99%" },
     { name: "شعار V الذهبي", code: "[b][c][ffd700]Ⓥ [ffffff] اكتب اسمك" },
@@ -115,7 +124,64 @@ const ffBios = [
     { name: "وحيد", code: "[b][i][ffffff]\"أقاتل وحدي\"\n[808080]── solo player ──" },
     { name: "انتقام", code: "[b][c][ff0000]🔥 R E V E N G E 🔥\n[ffffff]─────────────" },
     { name: "صامت", code: "[b][i][808080][ S I L E N T ]\n[ffffff]── no words ──" },
-    { name: "اقتباس عميق", code: "[b][i][ffffff]\"الصمت هو لغتي\"" }
+    { name: "اقتباس عميق", code: "[b][i][ffffff]\"الصمت هو لغتي\"" },
+
+    // مجسمات وأشكال غريبة
+    { name: "طائرة", code: "[b][c][ffffff]──────────────────\n[00ffcc]    __|__\n[ffffff]─────(•)─────\n[00ffcc]    /   \\\n[ffffff]──────────────────" },
+    { name: "شاحنة", code: "[b][c][ffd700]██████████████\n[ffffff]█[ff0000]  TRUCK  [ffffff]█\n[808080]◯──────────────◯" },
+    { name: "صاروخ", code: "[b][c][ffffff]    /\\\n   /  \\\n  /    \\\n [ffffff]██████\n [ff0000] ████\n  [ff8800]▲▲▲" },
+    { name: "قلعة", code: "[b][c][808080]▄█▄█▄█▄\n[ffffff]█[ffd700] ♛ [ffffff]█\n[808080]▀▀▀▀▀▀▀" },
+    { name: "تاج", code: "[b][c][ffd700]/\\/\\/\\\n[ffffff]|[ffd700]◆◆◆[ffffff]|\n[ffd700]└─────┘" },
+    { name: "سيارة سباق", code: "[b][c][ff0000]___________\n[ffffff]╱▐██████▌╲\n[808080]◯─────────◯" },
+    { name: "قلب ثلاثي", code: "[b][c][ff0000]♥[ff6600]♥[ffd700]♥[00ff00]♥[00ffcc]♥[0088ff]♥[aa00ff]♥" },
+    { name: "شبكة", code: "[b][c][00ffcc]┼─┼─┼─┼\n├─┼─┼─┤\n[ffffff]┼─┼─┼─┼" },
+    { name: "موجة صوت", code: "[b][c][00ff00]▁▂▃▄▅▆▇█▇▆▅▄▃▂▁" },
+    { name: "كود ماتريكس", code: "[b][c][00ff00]01001 10110\n[ffffff]M A T R I X\n[00ff00]10110 01001" },
+    { name: "نجمة الشمال", code: "[b][c][ffd700]  ★\n★   ★\n  ★" },
+    { name: "قمر وشمس", code: "[b][c][ffd700]─── ☀ ───\n[aaaaff]─── ☽ ───" },
+    { name: "ثعبان", code: "[b][c][00ff00]~≈~≈~≈~≈~\n[ff0000] S N A K E\n[00ff00]~≈~≈~≈~≈~" },
+    { name: "بيانو", code: "[b][c][ffffff]█▐█▐█ █▐█▐█\n[808080]▔▔▔▔▔▔▔▔▔" },
+    { name: "خيمة", code: "[b][c][ff8800]  /\\\n /  \\\n/____\\" },
+    { name: "غواصة", code: "[b][c][0044ff]≈≈≈≈≈≈≈≈≈\n[ffffff]◄██████►\n[0044ff]≈≈≈≈≈≈≈≈≈" },
+    { name: "ساعة رملية", code: "[b][c][ffd700]╔════╗\n[ffffff]╚▄██▄╝\n[ffd700]╔▀██▀╗\n[ffffff]╚════╝" },
+    { name: "بصمة", code: "[b][c][ff0055]░▓██▓░\n[ffffff]▓██████▓\n[ff0055]░▓████▓░" },
+    { name: "تويتر/X", code: "[b][c][1DA1F2]╭─╮\n[ffffff]︱✕֯︱ᴛᴡɪᴛᴛᴇʀ\n[1DA1F2]╰─╯" },
+    { name: "سناب شات", code: "[b][c][ffff00]╭─╮\n[ffffff]︱◉֯︱sɴᴀᴘᴄʜᴀᴛ\n[ffff00]╰─╯" },
+    { name: "تيليجرام", code: "[b][c][00aaff]╭─╮\n[ffffff]︱✈֯︱ᴛᴇʟᴇɢʀᴀᴍ\n[00aaff]╰─╯" },
+    { name: "واتساب", code: "[b][c][25D366]╭─╮\n[ffffff]︱☏֯︱ᴡʜᴀᴛsᴀᴘᴘ\n[25D366]╰─╯" },
+    { name: "فيسبوك", code: "[b][c][1877F2]╭─╮\n[ffffff]︱ғ֯︱ꜰᴀᴄᴇʙᴏᴏᴋ\n[1877F2]╰─╯" },
+    { name: "تويتش", code: "[b][c][9146FF]╭─╮\n[ffffff]︱▶֯︱ᴛᴡɪᴛᴄʜ\n[9146FF]╰─╯" },
+    { name: "ديسكورد", code: "[b][c][5865F2]╭─╮\n[ffffff]︱◎֯︱ᴅɪsᴄᴏʀᴅ\n[5865F2]╰─╯" },
+    { name: "يوتيوب شورتس", code: "[b][c][ff0000]╭─╮\n[ffffff]︱⚡֯︱sʜᴏʀᴛs\n[ff0000]╰─╯" },
+    { name: "سجن", code: "[b][c][808080]| | | | | |\n[ffffff] PRISONER\n[808080]| | | | | |" },
+    { name: "ضربة قاضية", code: "[b][c][ff0000]▓▓░░▓▓\n[ffffff] K.O.\n[ff0000]▓▓░░▓▓" },
+    { name: "مقبرة", code: "[b][c][808080]  †\n[ffffff]━━━━━\n[808080] R.I.P" },
+    { name: "سم", code: "[b][c][00ff00]☠ [ffffff]P O I S O N [00ff00] ☠\n[808080]▂▂▂▂▂▂▂▂" },
+    { name: "خطر", code: "[b][c][ff0000]⚠ [ffff00] D A N G E R [ff0000] ⚠\n[ffffff]── keep away ──" },
+    { name: "سكين", code: "[b][c][808080]──────────╮\n[ffffff]  B L A D E ╯\n[808080]──────────╯" },
+    { name: "ديناميت", code: "[b][c][ff0000]╔══╗\n[ffffff]║💣║\n[ff0000]╚══╝\n[ffff00]─ T N T ─" },
+    { name: "ديناميت", code: "[b][c][ff0000]╔══╗\n[ffffff]║██║\n[ff0000]╚══╝\n[ffff00]─ T N T ─" },
+    { name: "علم السودان", code: "[b][ff0000]███\n[ffffff]███\n[000000]███\n[008000]▬▬▬" },
+    { name: "علم ليبيا", code: "[b][000000]███\n[008000]█☽★█\n[000000]███" },
+    { name: "علم موريتانيا", code: "[b][008000]███\n[ffd700]☽★\n[ff0000]▬▬▬" },
+    { name: "علم لبنان", code: "[b][ff0000]███\n[ffffff]█🌲█\n[ff0000]███" },
+    { name: "علم الأردن", code: "[b][000000]███\n[ffffff]★\n[008000]███\n[ff0000]◀" },
+    { name: "علم العراق", code: "[b][ff0000]███\n[ffffff]███\n[000000]███" },
+    { name: "علم فلسطين", code: "[b][000000]█\n[ff0000]█\n[008000]█\n[ffffff]▶" },
+    {name:"fak",code:"[B][00FFFF]●  RAI VS JAY  █\▄█[FF0000]﹅[FFFFFF]▃█▀█●"},
+    {name:"  ",code:"[B][C]◢██9 YEARS OLD██◣|◢██10 YEARS OLD [B][C]◢██"},
+    {name:"  " ,code:"[b][c][FFFFFF]ME ဗီူ╯[Ff0200]❤ [00FF00]╰ဗီူYOU"},
+    {name:"LOVE",code:"[b][c][6E00FF]┏╮\ /╱✿ ፝֟፝ ╰♡✿[0000FF] PAGAL❤️ LOVE 1"},
+    {name:"  ",code:"[B][C][00FFFF](_̅(_̅(̅_̅_̅_̅_̅_̅_̅_̅_̅_̅()࿐"},
+    {name:"  ",code:"[B][C][00FFFF]╔═══╗⳻⳺ ║━◉━║جديد ┊king࿐ྂ ╚═══╝"},
+    { name: "هاتف 1", code: "[B][C]╭─╮\n︱☎︎︱ Where is the telephone ┆[FF00FF]?\n╰─╯" },
+    { name: "هاتف 2", code: "[B][00FFFF]╭─╮\n︱☎︎︱ There is no telephone ┆[CCFF00]!" },
+    { name: "تيك توك 2", code: "[B][C][00FFFF]╭─╮\n︱ꚠ︱тιктσк ┆ TikTok\n╰─╯" },
+    { name: "يوتيوب 2", code: "[B][00FFFF]╭──╮\n| ▶︎ | ʏ ᴛ ┊\n╰──" },
+    { name: "برو", code: "[B][C][00FF00]ㅤ|×͜×|ㅤ\n\\/█\\/ [00ffff]Pro" },
+    { name: "نت", code: "[B][C][FF0000]ᯤ 9 9 9 +[00FF00] What is the net" },
+    { name: "زهرة", code: "[B][C][FFD3EF]✿ Flower ✿\n[00FF00]᭄⸙ Beautiful ᭄⸙" },
+    {name:"  ",code:"[FF4500]◥████████████◤ [ ︻╦̵̵͇̿̿̿̿══╤─  ] FINAL CIRCLE ONLY◢████████████◣ "},
 
 ];
 
@@ -198,8 +264,16 @@ const ffSymbols = [
     '𝟬','𝟭','𝟮','𝟯','𝟰','𝟱','𝟲','𝟳','𝟴','𝟵',
     'Ⅰ','Ⅱ','Ⅲ','Ⅳ','Ⅴ','Ⅵ','Ⅶ','Ⅷ','Ⅸ','Ⅹ',
     'ⅰ','ⅱ','ⅲ','ⅳ','ⅴ','ⅵ','ⅶ','ⅷ','ⅸ','ⅹ',
-    '٠','١','٢','٣','٤','٥','٦','٧','٨','٩',
-    '۰','۱','۲','۳','۴','۵','۶','۷','۸','۹',
+    // فراغات خاصة
+    ' ','ㅤ','　','᠌','‌','‍','⠀',
+    // رموز إضافية جديدة
+    '꩜','꩝','꩞','꩟','ꩠ','ꩡ','ꩢ','ꩣ',
+    '꣎','꣏','꣐','꣑','꣒','꣓','꣔','꣕',
+    '᭡','᭢','᭣','᭤','᭥','᭦','᭧','᭨',
+    '꫁','ꫂ','꫃','꫄','꫅','꫆','꫇','꫈',
+    '⟁','⟂','⟃','⟄','⟅','⟆','⟇','⟈','⟉','⟊',
+    '⦁','⦂','⦃','⦄','⦅','⦆','⦇','⦈','⦉','⦊',
+    '⧫','⧬','⧭','⧮','⧯','⧰','⧱','⧲','⧳',
 ];
 
 // كلمات الكلان
@@ -336,15 +410,7 @@ function generateAllDecorations() {
         allDecorations.push({ type: 'ar', text: chars.join('ٰ') }); 
         allDecorations.push({ type: 'ar', text: chars.join('۪') }); 
 
-        // إضافة القوالب للنص العربي فقط
-        rawTemplates.forEach(template => {
-            allDecorations.push({ type: 'ar', text: template.replace('[NAME]', input) });
-        });
-        
-        const fancyArabic = applyArabicFont(input, arabicStyles[0].map, numberStyles.solidCircles);
-        rawTemplates.slice(0, 10).forEach(template => {
-            allDecorations.push({ type: 'ar', text: template.replace('[NAME]', fancyArabic) });
-        });
+
     } 
     // ==========================================
     // إذا كان النص إنجليزي فقط (أو أرقام فقط)
@@ -370,16 +436,22 @@ function generateAllDecorations() {
         allDecorations.push({ type: 'en', text: applyFont(input, fonts.gothic, numberStyles.small) });
         allDecorations.push({ type: 'en', text: applyFont(input, fonts.russian, numberStyles.small) });
         allDecorations.push({ type: 'en', text: applyFont(input, fonts.boxed, numberStyles.small) });
+        allDecorations.push({ type: 'en', text: applyFont(input, fonts.cursive, numberStyles.small) });
+        allDecorations.push({ type: 'en', text: applyFont(input, fonts.outline, numberStyles.small) });
+        allDecorations.push({ type: 'en', text: applyFont(input, fonts.monospace, numberStyles.small) });
         allDecorations.push({ type: 'en', text: input.toUpperCase().split('').join(' ') });
         allDecorations.push({ type: 'en', text: input.toUpperCase().split('').join('　') });
+        allDecorations.push({ type: 'en', text: input.toUpperCase().split('').join('·') });
+        allDecorations.push({ type: 'en', text: input.toUpperCase().split('').join('-') });
+        allDecorations.push({ type: 'en', text: input.toUpperCase().split('').join('꙰') });
         allDecorations.push({ type: 'en', text: `xX_${input}_Xx` });
+        allDecorations.push({ type: 'en', text: `•${input}•` });
+        allDecorations.push({ type: 'en', text: `★${input}★` });
+        allDecorations.push({ type: 'en', text: `꧁${input}꧂` });
         allDecorations.push({ type: 'en', text: input.toUpperCase() });
         allDecorations.push({ type: 'en', text: input.toLowerCase() });
 
-        // إضافة القوالب للنص الإنجليزي فقط
-        rawTemplates.forEach(template => {
-            allDecorations.push({ type: 'en', text: template.replace('[NAME]', input) });
-        });
+
     }
 
     // عرض النتائج بناءً على الفلتر النشط أو اللغة
@@ -432,10 +504,27 @@ function displayBios() {
     const container = document.getElementById('bio-container');
     if (container) {
         container.innerHTML = '';
+        container.style.cssText = "display:grid; grid-template-columns:1fr 1fr; gap:10px;";
         ffBios.forEach(bio => {
             let div = document.createElement('div');
-            div.style.cssText = "cursor:pointer; padding:12px; background:#16213e; color:#fff; border: 1px solid #e94560; border-radius:8px; text-align:right; position:relative; margin-bottom:10px;";
-            div.innerHTML = `<span style="color:#e94560; font-weight:bold;">${bio.name}</span><br><small style="font-size:10px; color:#aaa;">${bio.code}</small>`;
+            div.style.cssText = "cursor:pointer; padding:10px; background:#16213e; border: 1px solid #e94560; border-radius:8px; text-align:center; position:relative;";
+            
+            function renderBioPreview(code) {
+                let result = code;
+                result = result.replace(/\[b\]/gi, '');
+                result = result.replace(/\[i\]/gi, '');
+                result = result.replace(/\[u\]/gi, '');
+                result = result.replace(/\[c\]/gi, '');
+                result = result.replace(/\\n/g, '<br>');
+                result = result.replace(/\[([0-9A-Fa-f]{6})\]/g, '</span><span style="color:#$1">');
+                result = '<span style="color:#ffffff">' + result + '</span>';
+                return result;
+            }
+
+            div.innerHTML = `
+                <div style="background:#000; border-radius:6px; padding:8px; font-size:12px; text-align:center; direction:ltr; unicode-bidi:plaintext; line-height:1.6; overflow:hidden;">${renderBioPreview(bio.code)}</div>
+                <div style="font-size:10px; color:#666; margin-top:4px; text-align:center;">${bio.name}</div>
+            `;
             div.onclick = () => copyText(bio.code, bio.name);
             container.appendChild(div);
         });
@@ -580,11 +669,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     backToTop.addEventListener('click', () => {
-  const activePage = document.querySelector('.ff-fullscreen-page.active .page-body');
+        const activePage = document.querySelector('.ff-fullscreen-page.active .page-body');
         if (activePage) {
             activePage.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     });
+
+    // زرا الرموز
+    let currentSymSide = 'left';
+    window.toggleSymPanel = function(side) {
+        const symPanel = document.getElementById('sym-panel');
+        if (!symPanel) return;
+        if (symPanel.style.display === 'flex' && currentSymSide === side) {
+            symPanel.style.display = 'none';
+            return;
+        }
+        currentSymSide = side;
+        symPanel.style.display = 'flex';
+        symPanel.innerHTML = '';
+        ffSymbols.forEach(sym => {
+            const btn = document.createElement('button');
+            btn.textContent = sym;
+            btn.style.cssText = "background:#0d0d1a; color:#fff; border:1px solid #00ffcc33; padding:6px 10px; border-radius:6px; cursor:pointer; font-size:16px;";
+            btn.onclick = () => {
+                const input = document.getElementById('username');
+                if (!input) return;
+                if (side === 'right') {
+                input.value = sym + input.value;
+                  }else {
+                  input.value = input.value + sym;
+                }
+                generateAllDecorations();
+                symPanel.style.display = 'none';
+            };
+            symPanel.appendChild(btn);
+        });
+    };
 });
