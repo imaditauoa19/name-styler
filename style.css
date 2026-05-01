@@ -73,6 +73,8 @@ h1 {
     outline: none;
     transition: 0.4s;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    direction: ltr;
+    unicode-bidi: plaintext;
 }
 
 .input-group input:focus {
@@ -99,7 +101,7 @@ h1 {
     background: rgba(255, 255, 255, 0.05);
     color: #fff;
     border: 1px solid rgba(5, 255, 255, 0.2);
-    padding: 12px 24px;
+    padding: 13px 12px;
     border-radius: 50px;
     cursor: pointer;
     transition: 0.3s;
@@ -692,4 +694,9 @@ body.light-mode #symbols-name-input {
 }
 #back-to-top {
     z-index: 999999 !important;
+   }
+.result-item {
+    direction: ltr;
+    unicode-bidi: plaintext;
+    text-align: center;
    }
